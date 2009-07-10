@@ -1,0 +1,8 @@
+{% load i18n %}
+{% load local_perms %}
+
+<h1 id="action_t" class="action_title">
+{% ifequal current_tab "list" %}{% blocktrans %}workspace{% endblocktrans %}{% else %}<span class="others"><a href="{% url texts-user user.id %}">{% blocktrans %}workspace{% endblocktrans %}</a></span>{% endifequal %}
+| {% ifequal current_tab "upload" %}{% blocktrans %}upload text{% endblocktrans %}{% else %}<span class="others"><a href="{% url text-upload %}">{% blocktrans %}upload text{% endblocktrans %}</a></span>{% endifequal %}
+| {% ifequal current_tab "add" %}{% blocktrans %}create text{% endblocktrans %}{% else %}<span class="others"><a href="{% url text-add %}">{% blocktrans %}create text{% endblocktrans %}</a></span>{% endifequal %}
+</h1>

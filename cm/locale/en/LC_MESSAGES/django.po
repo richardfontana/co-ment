@@ -1,0 +1,1586 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-01-20 15:24+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: email_alerts.py:30
+#, python-format
+msgid ""
+"A comment entitled '%(comment_title)s' has been added to the text '%"
+"(text_title)s'"
+msgstr ""
+
+#: email_alerts.py:32
+#, python-format
+msgid ""
+"A reply entitled '%(reply_title)s' to the comment '%(comment_title)s' has "
+"been added (text '%(text_title)s'): "
+msgstr ""
+
+#: email_alerts.py:72
+#, python-format
+msgid ""
+"A new version of the text entitled '%(text_version_name)s' has been created "
+"(note : '%(version_note)s')"
+msgstr ""
+
+#: email_alerts.py:76
+#, python-format
+msgid ""
+"A new version of the text entitled '%(text_version_name)s' has been created"
+msgstr ""
+
+#: email_alerts.py:77
+#, python-format
+msgid "Click here to access this version: %(version_url)s"
+msgstr ""
+
+#: models.py:87
+msgid "name"
+msgstr ""
+
+#: models.py:223
+msgid "activation key"
+msgstr ""
+
+#: models.py:257
+msgid "invitation failed (email error) !"
+msgstr ""
+
+#: models.py:259
+msgid "invitation pending"
+msgstr ""
+
+#: patchs.py:23
+#, python-format
+msgid "Invalid distribution algorithm specified: %s."
+msgstr ""
+
+#: examples/settings.py:67
+msgid "French"
+msgstr ""
+
+#: examples/settings.py:68
+msgid "English"
+msgstr ""
+
+#: templates/404.html:4 templates/404.html.py:7
+msgid "Page not found"
+msgstr ""
+
+#: templates/404.html:8
+msgid "The requested page does not exist."
+msgstr ""
+
+#: templates/404.html:10 templates/site/unauthorized.html:10
+msgid ""
+"If you think this is an error, feel free to contact us using the button at "
+"the bottom of the page."
+msgstr ""
+
+#: templates/500.html:4 templates/500.html.py:7
+msgid "Internal error"
+msgstr ""
+
+#: templates/500.html:8
+msgid "Internal server error."
+msgstr ""
+
+#: templates/500.html:10
+msgid ""
+"If you'd like to help us with this problem, feel free to contact us using "
+"the button at the bottom of the page."
+msgstr ""
+
+#: templates/accounts/activation_email.html:2
+msgid "You've just registered to the co-ment service."
+msgstr ""
+
+#: templates/accounts/activation_email.html:4
+msgid "Activate your account by clicking on the following link :"
+msgstr ""
+
+#: templates/accounts/activation_email_subject.html:1
+msgid "Activation email"
+msgstr ""
+
+#: templates/accounts/contact_user.html:4
+#: templates/accounts/contact_user.html:7
+#, python-format
+msgid "Contact user %(name)s"
+msgstr ""
+
+#: templates/accounts/contact_user.html:12
+#, python-format
+msgid "To contact user %(name)s, fill in the form and click send."
+msgstr ""
+
+#: templates/accounts/contact_user.html:18
+#: templates/accounts/password_reset.html:19
+#: templates/accounts/password_reset_real.html:19
+#: templates/site/contact.html:18 templates/texts/text_invite.html:30
+msgid "Send"
+msgstr ""
+
+#: templates/accounts/invitation_register.html:4
+#: templates/accounts/invitation_register.html:7
+#, python-format
+msgid "Invitation on text \"%(title)s\" by %(name)s"
+msgstr ""
+
+#: templates/accounts/invitation_register.html:13
+#, python-format
+msgid "You've been invited by %(name)s to collaborate on text \"%(title)s\""
+msgstr ""
+
+#: templates/accounts/invitation_register.html:16
+msgid "Fill in the following form to register and access the text."
+msgstr ""
+
+#: templates/accounts/invitation_register.html:23
+#: templates/accounts/register.html:22 templates/layout/header_right.html:15
+msgid "Register"
+msgstr ""
+
+#: templates/accounts/invitation_register.html:30
+msgid "You're already logged-in !"
+msgstr ""
+
+#: templates/accounts/login.html:4 templates/accounts/login.html.py:7
+#: templates/accounts/login.html:19 templates/accounts/login.html.py:38
+#: templates/layout/header_right.html:12
+msgid "Login"
+msgstr ""
+
+#: templates/accounts/login.html:13
+msgid ""
+"To login, please fill in username and password provided during the "
+"registration phase."
+msgstr ""
+
+#: templates/accounts/login.html:23
+msgid "No account yet ?"
+msgstr ""
+
+#: templates/accounts/login.html:23
+msgid "Register now."
+msgstr ""
+
+#: templates/accounts/login.html:26
+msgid "Lost your password ?"
+msgstr ""
+
+#: templates/accounts/login.html:26
+msgid "Reset your password."
+msgstr ""
+
+#: templates/accounts/login.html:46
+msgid "You're already logged-in"
+msgstr ""
+
+#: templates/accounts/password_reset.html:4
+#: templates/accounts/password_reset.html:7
+msgid "Reset your password"
+msgstr ""
+
+#: templates/accounts/password_reset.html:13
+msgid ""
+"To reset your password, fill in the form with the email you provided when "
+"you registered."
+msgstr ""
+
+#: templates/accounts/password_reset.html:27
+#: templates/accounts/password_reset_real.html:27
+msgid ""
+"You're already logged-in, use the 'profile' button to change your password."
+msgstr ""
+
+#: templates/accounts/password_reset_email.html:1
+msgid ""
+"You've requested a password reset. Click on the following link to change "
+"your password."
+msgstr ""
+
+#: templates/accounts/password_reset_email.html:2
+msgid ""
+"It's safe to ignore this email if you don't want to change you're password."
+msgstr ""
+
+#: templates/accounts/password_reset_email_subject.html:1
+#: templates/accounts/password_reset_real.html:4
+#: templates/accounts/password_reset_real.html:7
+msgid "Password reset"
+msgstr ""
+
+#: templates/accounts/password_reset_real.html:13
+msgid "Change your password using the form."
+msgstr ""
+
+#: templates/accounts/profile.html:4 templates/accounts/profile.html.py:7
+#: templates/layout/header_right.html:8
+msgid "Your profile"
+msgstr ""
+
+#: templates/accounts/profile.html:12
+msgid ""
+"Your profile contains the informations this site knows about you. We will "
+"never disclose this information to any third party. Please make sure the "
+"email is right, since this will be the preferred way for the site to "
+"communicate with you."
+msgstr ""
+
+#: templates/accounts/profile.html:54
+msgid "Update"
+msgstr ""
+
+#: templates/accounts/register.html:4 templates/accounts/register.html.py:7
+msgid "New co-ment User"
+msgstr ""
+
+#: templates/accounts/register.html:13
+msgid ""
+"Access to this co-ment service requires only registration and is free of "
+"charge."
+msgstr ""
+
+#: templates/accounts/register.html:29
+msgid "You're already logged-in."
+msgstr ""
+
+#: templates/accounts/register_form.html:56
+msgid "Terms of Use"
+msgstr ""
+
+#: templates/attach/add_attach.html:7 templates/texts/settings.html:98
+msgid "Name"
+msgstr ""
+
+#: templates/attach/add_attach.html:10
+msgid "E-mail (will not be published)"
+msgstr ""
+
+#: templates/attach/add_attach.html:16
+msgid "Comment will apply to this selection of the text:"
+msgstr ""
+
+#: templates/attach/add_attach.html:17 templates/attach/edit_attach.html:18
+msgid "no selection yet"
+msgstr ""
+
+#: templates/attach/add_attach.html:18
+msgid "Select the part you wish to comment in the text displayed on the right"
+msgstr ""
+
+#: templates/attach/add_attach.html:21 templates/attach/edit_attach.html:7
+msgid "Title (required)"
+msgstr ""
+
+#: templates/attach/add_attach.html:24 templates/attach/edit_attach.html:10
+msgid "Text (required)"
+msgstr ""
+
+#: templates/attach/add_attach.html:27 templates/attach/edit_attach.html:13
+msgid "Tags (comma separated)"
+msgstr ""
+
+#: templates/attach/edit_attach.html:17
+msgid "Also modify the comment's scope"
+msgstr ""
+
+#: templates/attach/edit_attach.html:19
+msgid "Select the part of text the comment should apply to."
+msgstr ""
+
+#: templates/embed/embed_page.html:4 templates/layout/text_tabs.html:22
+#: templates/texts/list.html:100
+msgid "embed"
+msgstr ""
+
+#: templates/embed/embed_page.html:16
+msgid ""
+"To insert your text (with or without its comments) into your web site, just "
+"copy and paste the following code into your web page."
+msgstr ""
+
+#: templates/embed/embed_page.html:22
+msgid "Public text view with comments (recommended)"
+msgstr ""
+
+#: templates/embed/embed_page.html:23
+msgid "Copy this code into your site to display text with comments."
+msgstr ""
+
+#: templates/embed/embed_page.html:24
+msgid "Allowed Users will also be able to add comments from your site."
+msgstr ""
+
+#: templates/embed/embed_page.html:32
+msgid "Public text view without comments"
+msgstr ""
+
+#: templates/embed/embed_page.html:33
+msgid "Copy this code into your site to display text without comments."
+msgstr ""
+
+#: templates/embed/embed_page.html:41
+msgid "Public text view"
+msgstr ""
+
+#: templates/embed/embed_page.html:42
+msgid "Text must be public to activate this feature."
+msgstr ""
+
+#: templates/embed/embed_page.html:47
+msgid "Click here to change sharing settings."
+msgstr ""
+
+#: templates/embed/embed_page.html:57 templates/feeds/feed_page.html:43
+#: templates/texts/settings.html:247
+msgid "Back to workspace"
+msgstr ""
+
+#: templates/feeds/feed_page.html:4 templates/layout/text_tabs.html:21
+#: templates/texts/list.html:99
+msgid "feeds"
+msgstr ""
+
+#: templates/feeds/feed_page.html:17
+msgid ""
+"Your text's feeds allow you to track any comments or edits on your text "
+"using a simple RSS feed reader."
+msgstr ""
+
+#: templates/feeds/feed_page.html:22
+msgid "Public feed"
+msgstr ""
+
+#: templates/feeds/feed_page.html:24 templates/feeds/feed_page.html.py:37
+#: templates/texts/list_public.html:69 templates/texts/list_public.html:121
+#, python-format
+msgid "Feed for text '%(title)s'"
+msgstr ""
+
+#: templates/feeds/feed_page.html:24
+#, python-format
+msgid "Public feed for text '%(title)s'"
+msgstr ""
+
+#: templates/feeds/feed_page.html:26
+msgid "Text is not public, feed is not active"
+msgstr ""
+
+#: templates/feeds/feed_page.html:29
+msgid "This is the public address for your text's feed."
+msgstr ""
+
+#: templates/feeds/feed_page.html:31
+msgid "It is not valid unless you have made your text public."
+msgstr ""
+
+#: templates/feeds/feed_page.html:36
+msgid "Private feed"
+msgstr ""
+
+#: templates/feeds/feed_page.html:37
+#, python-format
+msgid "Private feed for text '%(title)s'"
+msgstr ""
+
+#: templates/feeds/feed_page.html:38
+msgid "reset private URLs"
+msgstr ""
+
+#: templates/feeds/feed_page.html:39
+msgid ""
+"This is the private address for your text's feed. Don't share this address "
+"with others unless you want them to see all the edits and comments on this "
+"text."
+msgstr ""
+
+#: templates/layout/base.html:13 templates/site/index.html:3
+msgid "Web-based text annotation"
+msgstr ""
+
+#: templates/layout/header_left.html:2
+msgid "Home"
+msgstr ""
+
+#: templates/layout/header_left.html:4
+msgid "Public texts"
+msgstr ""
+
+#: templates/layout/header_right.html:4
+#, python-format
+msgid "Signed in as %(username)s"
+msgstr ""
+
+#: templates/layout/header_right.html:6
+msgid "Workspace"
+msgstr ""
+
+#: templates/layout/header_right.html:10
+msgid "Logout"
+msgstr ""
+
+#: templates/layout/keywords.html:2
+msgid "text"
+msgstr ""
+
+#: templates/layout/keywords.html:2
+msgid "annotation"
+msgstr ""
+
+#: templates/layout/keywords.html:2
+msgid "comment"
+msgstr ""
+
+#: templates/layout/keywords.html:2
+msgid "text annotation"
+msgstr ""
+
+#: templates/layout/keywords.html:2
+msgid "collaboration"
+msgstr ""
+
+#: templates/layout/text_tabs.html:10 templates/texts/list.html:67
+#: templates/texts/list.html.py:81
+msgid "view & comment"
+msgstr ""
+
+#: templates/layout/text_tabs.html:12 templates/texts/list.html:69
+#: templates/texts/list.html.py:83 templates/texts/list_public.html:65
+#: templates/texts/list_public.html:117
+msgid "view"
+msgstr ""
+
+#: templates/layout/text_tabs.html:16 templates/texts/list.html:86
+msgid "edit"
+msgstr ""
+
+#: templates/layout/text_tabs.html:19
+msgid "sharing and moderation"
+msgstr ""
+
+#: templates/layout/workspace_tabs.html:5 templates/texts/list.html:6
+msgid "workspace"
+msgstr ""
+
+#: templates/layout/workspace_tabs.html:6
+msgid "upload text"
+msgstr ""
+
+#: templates/layout/workspace_tabs.html:7
+msgid "create text"
+msgstr ""
+
+#: templates/notifications/alert_email_body.html:6
+#, python-format
+msgid ""
+"To access the text, click here:\n"
+"%(site_url)s%(text_url)s"
+msgstr ""
+
+#: templates/notifications/alert_email_body.html:9
+#, python-format
+msgid ""
+"To unsubscribe from this text, click here:\n"
+"%(site_url)s%(unsubscribe_url)s"
+msgstr ""
+
+#: templates/site/contact.html:4 templates/site/contact.html.py:7
+msgid "Contact"
+msgstr ""
+
+#: templates/site/contact.html:12
+msgid ""
+"To contact us, fill in the form. We will get back to you as quickly as "
+"possible."
+msgstr ""
+
+#: templates/site/embeded_unauthorized.html:10
+#: templates/site/embeded_unauthorized.html:14
+msgid "Text is private"
+msgstr ""
+
+#: templates/site/unauthorized.html:4 templates/site/unauthorized.html.py:7
+msgid "Unauthorized"
+msgstr ""
+
+#: templates/site/unauthorized.html:8
+msgid "You don't have the required permissions to perform this action."
+msgstr ""
+
+#: templates/texts/add.html:3
+msgid "Create a text"
+msgstr ""
+
+#: templates/texts/diff_versions.html:4 templates/texts/diff_versions.html:7
+msgid "Difference between versions"
+msgstr ""
+
+#: templates/texts/diff_versions.html:12
+msgid "This is the difference between the two versions :"
+msgstr ""
+
+#: templates/texts/diff_versions.html:17 templates/texts/diff_versions.html:25
+#: templates/texts/list.html:105 templates/texts/list_public.html:73
+#: templates/texts/list_public.html:125 templates/texts/versions.html:26
+msgid "By"
+msgstr ""
+
+#: templates/texts/diff_versions.html:18 templates/texts/diff_versions.html:26
+#: templates/texts/list.html:106 templates/texts/list_public.html:74
+#: templates/texts/list_public.html:126 templates/texts/versions.html:27
+#, python-format
+msgid "created on %(date)s"
+msgstr ""
+
+#: templates/texts/diff_versions.html:31
+msgid "Legend :"
+msgstr ""
+
+#: templates/texts/diff_versions.html:33
+msgid "text inserted in most recent version"
+msgstr ""
+
+#: templates/texts/diff_versions.html:35
+msgid "text deleted in most recent version"
+msgstr ""
+
+#: templates/texts/diff_versions.html:40
+msgid "Back to the versions page."
+msgstr ""
+
+#: templates/texts/diff_versions.html:42
+msgid "Go to text (most recent version)."
+msgstr ""
+
+#: templates/texts/edit.html:3
+msgid "Edit"
+msgstr ""
+
+#: templates/texts/editor.html:8 templates/texts/settings.html:158
+#: templates/texts/settings.html.py:185
+msgid "Save"
+msgstr ""
+
+#: templates/texts/editor.html:13
+msgid "Save and continue editing"
+msgstr ""
+
+#: templates/texts/editor.html:50 templates/texts/editor.html.py:99
+msgid "Warning"
+msgstr ""
+
+#: templates/texts/editor.html:100
+msgid ""
+"Since you chose not to create a new version all comments will be definitely "
+"lost, do you want to continue ?"
+msgstr ""
+
+#: templates/texts/list.html:7 templates/texts/list.html.py:17
+#, python-format
+msgid "%(username)s's texts"
+msgstr ""
+
+#: templates/texts/list.html:20
+msgid "contact user"
+msgstr ""
+
+#: templates/texts/list.html:33 templates/texts/list_public.html:99
+#, python-format
+msgid "%(counter)s text"
+msgid_plural "%(counter)s texts"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/texts/list.html:42
+msgid "No text yet."
+msgstr ""
+
+#: templates/texts/list.html:44
+msgid "Click here to create one directly on the site."
+msgstr ""
+
+#: templates/texts/list.html:46
+msgid "Click here to upload a document."
+msgstr ""
+
+#: templates/texts/list.html:74 templates/texts/list_public.html:67
+#: templates/texts/list_public.html:119 templates/texts/versions.html:24
+#, python-format
+msgid "%(nb)s comment"
+msgid_plural "%(nb)s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/texts/list.html:74 templates/texts/list_public.html:67
+#: templates/texts/list_public.html:119 templates/texts/versions.html:24
+#, python-format
+msgid "%(nb)s reply"
+msgid_plural "%(nb)s replies"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/texts/list.html:76
+#, python-format
+msgid "%(versions_number)s version"
+msgid_plural "%(versions_number)s versions"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/texts/list.html:88 templates/texts/list.html.py:91
+msgid "duplicate"
+msgstr ""
+
+#: templates/texts/list.html:91
+msgid "you can't create more texts"
+msgstr ""
+
+#: templates/texts/list.html:95
+msgid "Are you sure you want to delete this text ?"
+msgstr ""
+
+#: templates/texts/list.html:97
+msgid "delete"
+msgstr ""
+
+#: templates/texts/list.html:108
+msgid "edit sharing and moderation properties"
+msgstr ""
+
+#: templates/texts/list.html:108
+msgid "sharing and moderation:"
+msgstr ""
+
+#: templates/texts/list.html:108
+msgid "sharing:"
+msgstr ""
+
+#: templates/texts/list.html:109
+msgid "viewing is"
+msgstr ""
+
+#: templates/texts/list.html:112 templates/texts/list.html.py:120
+msgid "public"
+msgstr ""
+
+#: templates/texts/list.html:115 templates/texts/list.html.py:123
+msgid "private"
+msgstr ""
+
+#: templates/texts/list.html:116 templates/texts/list.html.py:125
+msgid "shared"
+msgstr ""
+
+#: templates/texts/list.html:118
+msgid "commenting is"
+msgstr ""
+
+#: templates/texts/list.html:144 templates/texts/list_public.html:149
+msgid "previous"
+msgstr ""
+
+#: templates/texts/list.html:147 templates/texts/list_public.html:152
+msgid "page"
+msgstr ""
+
+#: templates/texts/list.html:150 templates/texts/list_public.html:156
+#: templates/texts/list_public.html:159 templates/texts/list_public.html:161
+msgid "next"
+msgstr ""
+
+#: templates/texts/list_public.html:5
+msgid "Search in public texts"
+msgstr ""
+
+#: templates/texts/list_public.html:11 templates/texts/list_public.html:19
+msgid "View all public texts"
+msgstr ""
+
+#: templates/texts/list_public.html:14
+#, python-format
+msgid "Tagged texts : %(tag_name)s"
+msgstr ""
+
+#: templates/texts/list_public.html:16
+#, python-format
+msgid "Search in public texts for '%(search_string)s'"
+msgstr ""
+
+#: templates/texts/list_public.html:29
+msgid "Search"
+msgstr ""
+
+#: templates/texts/list_public.html:53
+#, python-format
+msgid "%(nb)s text tagged '%(current_tag_name)s'"
+msgid_plural "%(nb)s texts tagged '%(current_tag_name)s'"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/texts/list_public.html:97
+#, python-format
+msgid "%(counter)s text for '%(search_string)s'"
+msgid_plural "%(counter)s texts for '%(search_string)s'"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/texts/list_public.html:109
+#, python-format
+msgid "No results for query '%(search_string)s'."
+msgstr ""
+
+#: templates/texts/settings.html:8
+msgid "Sharing and moderation"
+msgstr ""
+
+#: templates/texts/settings.html:20
+msgid "Here you can change the settings for the text."
+msgstr ""
+
+#: templates/texts/settings.html:23
+msgid ""
+"You can delegate the possibility for others to see and/or comment on the "
+"text, either by inviting selected people or by opening to the public those "
+"actions."
+msgstr ""
+
+#: templates/texts/settings.html:26
+msgid ""
+"To make your text publicly viewable, head over to the \"Manage users\" "
+"section and set the \"Observer\" role to \"Anonymous users\"."
+msgstr ""
+
+#: templates/texts/settings.html:30
+msgid "Add new user(s)"
+msgstr ""
+
+#: templates/texts/settings.html:82
+msgid "Add user(s)"
+msgstr ""
+
+#: templates/texts/settings.html:89
+msgid "Manage users"
+msgstr ""
+
+#: templates/texts/settings.html:102
+msgid "Assigned Role"
+msgstr ""
+
+#: templates/texts/settings.html:111
+msgid "Anonymous users"
+msgstr ""
+
+#: templates/texts/settings.html:147
+msgid "Email selected users"
+msgstr ""
+
+#: templates/texts/settings.html:155
+msgid "Delete selected users"
+msgstr ""
+
+#: templates/texts/settings.html:169
+msgid "user1@example.com\\nuser2@example.com"
+msgstr ""
+
+#: templates/texts/settings.html:203
+msgid "Manage workflow and moderation for comments"
+msgstr ""
+
+#: templates/texts/settings.html:212
+msgid ""
+"Some comments on this text will have their state changed back to the initial "
+"state. Are you sure you want to continue ?"
+msgstr ""
+
+#: templates/texts/settings_contact_email.html:4
+#: templates/texts/settings_notify_email.html:3
+msgid "Click here to access the text :"
+msgstr ""
+
+#: templates/texts/settings_notify_email.html:1
+#, python-format
+msgid "You've been added to the participants on text \"%(title)s\""
+msgstr ""
+
+#: templates/texts/settings_notify_subject.html:1
+#, python-format
+msgid "Invitation to collaborate on the text \"%(title)s\""
+msgstr ""
+
+#: templates/texts/text_invite.html:4 templates/texts/text_invite.html.py:7
+msgid "Email users"
+msgstr ""
+
+#: templates/texts/text_invite.html:12
+msgid "Use this form to send an email to the following participant."
+msgid_plural "Use this form to send an email to the following participants."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/texts/text_invite.html:15
+#, python-format
+msgid "Note that you can add a link to the text \"%(title)s\" in the email."
+msgstr ""
+
+#: templates/texts/text_invite.html:19
+#, python-format
+msgid "Email will be sent to one participant :"
+msgid_plural "Email will be sent to %(counter)s participants :"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/texts/upload.html:3
+msgid "Upload a text"
+msgstr ""
+
+#: templates/texts/upload.html:12
+msgid "Select the file to upload."
+msgstr ""
+
+#: templates/texts/upload.html:15
+msgid ""
+"Supported formats are : Open Office Document, Microsoft Word, Rich Text "
+"Format (rtf), Text document (txt), DocBook File, etc."
+msgstr ""
+
+#: templates/texts/upload.html:20
+msgid "Upload"
+msgstr ""
+
+#: templates/texts/versions.html:7 templates/texts/versions.html.py:11
+#, python-format
+msgid "One version for text \"%(title)s\""
+msgid_plural "%(counter)s versions for text \"%(title)s\""
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/texts/versions.html:29
+msgid "note"
+msgstr ""
+
+#: templates/texts/versions.html:32
+msgid "revert to this version"
+msgstr ""
+
+#: templates/texts/versions.html:38
+msgid "Are you sure you want to delete this version ?"
+msgstr ""
+
+#: templates/texts/versions.html:41
+msgid "delete this version"
+msgstr ""
+
+#: templates/texts/versions.html:51
+msgid "Compare selected versions"
+msgstr ""
+
+#: templates/texts/viewandcomment.html:56
+msgid "Loading..."
+msgstr ""
+
+#: templates/texts/viewandcomment.html:61
+msgid "powered by co-ment®"
+msgstr ""
+
+#: templates/texts/viewandcomment.html:158
+msgid "View all comments"
+msgstr ""
+
+#: templates/texts/viewandcomment.html:182
+msgid "Versions"
+msgstr ""
+
+#: templatetags/cm_utils.py:35
+msgid "F j, Y \\a\\t g:i a"
+msgstr ""
+
+#: views/__init__.py:65 views/texts_settings.py:445
+msgid "None"
+msgstr ""
+
+#: views/__init__.py:65
+msgid "no permission"
+msgstr ""
+
+#: views/__init__.py:65
+msgid "text is private"
+msgstr ""
+
+#: views/__init__.py:66
+msgid "Observer"
+msgstr ""
+
+#: views/__init__.py:66 views/__init__.py:67 views/__init__.py:68
+msgid "read text"
+msgstr ""
+
+#: views/__init__.py:66
+msgid "read comments"
+msgstr ""
+
+#: views/__init__.py:67
+msgid "Commenter"
+msgstr ""
+
+#: views/__init__.py:67
+msgid "read and create comments"
+msgstr ""
+
+#: views/__init__.py:68
+msgid "Moderator"
+msgstr ""
+
+#: views/__init__.py:68 views/__init__.py:69 views/__init__.py:70
+msgid "read, create and moderate comments"
+msgstr ""
+
+#: views/__init__.py:69
+msgid "Editor"
+msgstr ""
+
+#: views/__init__.py:69
+msgid "read and edit text"
+msgstr ""
+
+#: views/__init__.py:70
+msgid "Owner"
+msgstr ""
+
+#: views/__init__.py:70
+msgid "read, edit and manage rights on text"
+msgstr ""
+
+#: views/__init__.py:74 views/__init__.py:80
+msgid "pending"
+msgstr ""
+
+#: views/__init__.py:75 views/__init__.py:81
+msgid "visible"
+msgstr ""
+
+#: views/__init__.py:76 views/__init__.py:82
+msgid "published"
+msgstr ""
+
+#: views/__init__.py:77 views/__init__.py:83
+msgid "rejected"
+msgstr ""
+
+#: views/__init__.py:84
+msgid "ignored"
+msgstr ""
+
+#: views/__init__.py:85
+msgid "redundant"
+msgstr ""
+
+#: views/__init__.py:86
+msgid "issue"
+msgstr ""
+
+#: views/__init__.py:87
+msgid "oked"
+msgstr ""
+
+#: views/__init__.py:88
+msgid "done"
+msgstr ""
+
+#: views/__init__.py:89
+msgid "amendment"
+msgstr ""
+
+#: views/accounts.py:36
+msgid "You've been logged out."
+msgstr ""
+
+#: views/accounts.py:40 views/accounts.py:86 views/accounts.py:458
+msgid "Username"
+msgstr ""
+
+#: views/accounts.py:41 views/accounts.py:134 views/accounts.py:557
+msgid "Password"
+msgstr ""
+
+#: views/accounts.py:50
+msgid ""
+"User is not active yet. If you registered just now, please check your inbox "
+"and look for the activation email."
+msgstr ""
+
+#: views/accounts.py:53
+msgid "Invalid username or password."
+msgstr ""
+
+#: views/accounts.py:69 views/site.py:183
+msgid "You've been logged in."
+msgstr ""
+
+#: views/accounts.py:83 views/accounts.py:455
+msgid "your current email address (it will never be displayed)"
+msgstr ""
+
+#: views/accounts.py:90
+msgid ""
+"Use 4 to 32 characters and start with a letter. You may use letters, "
+"numbers, underscores, and one dot (.) but no accents."
+msgstr ""
+
+#: views/accounts.py:92 views/accounts.py:461
+msgid "First name"
+msgstr ""
+
+#: views/accounts.py:93 views/accounts.py:462
+msgid "Last name"
+msgstr ""
+
+#: views/accounts.py:94 views/accounts.py:464
+msgid "Preferred language"
+msgstr ""
+
+#: views/accounts.py:95
+msgid "this will be the language used by the site to communicate with you"
+msgstr ""
+
+#: views/accounts.py:100
+msgid "I have read and agree to the Terms of Use"
+msgstr ""
+
+#: views/accounts.py:105
+msgid "Click here to subscribe to the (monthly) co-ment newsletter"
+msgstr ""
+
+#: views/accounts.py:114
+msgid "You must agree to the terms to register"
+msgstr ""
+
+#: views/accounts.py:128 views/accounts.py:238 views/accounts.py:266
+msgid "This username is already in use. Please supply a different username."
+msgstr ""
+
+#: views/accounts.py:137 views/accounts.py:558
+msgid "pick up a password"
+msgstr ""
+
+#: views/accounts.py:140 views/accounts.py:153 views/accounts.py:560
+msgid "Password (repeat)"
+msgstr ""
+
+#: views/accounts.py:141 views/accounts.py:154 views/accounts.py:561
+msgid "please repeat your password for confirmation"
+msgstr ""
+
+#: views/accounts.py:147
+msgid "OpenID"
+msgstr ""
+
+#: views/accounts.py:148
+msgid ""
+"Fill this instead of the passwords above if you whish to use OpenID "
+"authentification"
+msgstr ""
+
+#: views/accounts.py:169
+msgid "This OpenID is already in use. Please supply a different one."
+msgstr ""
+
+#: views/accounts.py:177
+msgid ""
+"Password and OpenID are filled, you should choose between the two "
+"authentification modes"
+msgstr ""
+
+#: views/accounts.py:187 views/accounts.py:570
+msgid "Passwords do not match, please check."
+msgstr ""
+
+#: views/accounts.py:192
+msgid "Please fill in the passwords"
+msgstr ""
+
+#: views/accounts.py:196
+msgid "Please fill in the OpenID url (or the passwords above)"
+msgstr ""
+
+#: views/accounts.py:226 views/accounts.py:254 views/accounts.py:487
+msgid ""
+"This email address is already in use. Please supply a different email "
+"address."
+msgstr ""
+
+#: views/accounts.py:322
+msgid "OpenId Registration successful!"
+msgstr ""
+
+#: views/accounts.py:325
+msgid "Registration successful! Check your email to activate your account."
+msgstr ""
+
+#: views/accounts.py:408
+msgid "Registration successful !"
+msgstr ""
+
+#: views/accounts.py:434
+msgid "Welcome, your account has been activated."
+msgstr ""
+
+#: views/accounts.py:444
+msgid ""
+"this is the email which received the invitation (it will never be displayed "
+"on the site)"
+msgstr ""
+
+#: views/accounts.py:449 views/accounts.py:590
+msgid "Invalid activation key."
+msgstr ""
+
+#: views/accounts.py:454
+msgid "Email"
+msgstr ""
+
+#: views/accounts.py:459
+msgid ""
+"this is your username on this site (it cannot be changed after registration)"
+msgstr ""
+
+#: views/accounts.py:465
+msgid "this will be the language use by the site to communicate with you"
+msgstr ""
+
+#: views/accounts.py:469
+msgid "Service level"
+msgstr ""
+
+#: views/accounts.py:473
+msgid "I welcome email contact from other site members"
+msgstr ""
+
+#: views/accounts.py:474
+msgid ""
+"this will create a web contact form through which other users can contact "
+"you (your email won't be displayed)"
+msgstr ""
+
+#: views/accounts.py:503
+msgid "Profile updated."
+msgstr ""
+
+#: views/accounts.py:519 views/site.py:123
+msgid "Your email address"
+msgstr ""
+
+#: views/accounts.py:546
+msgid ""
+"An email has been sent to you registration address, click on the link in "
+"this email to change your password."
+msgstr ""
+
+#: views/accounts.py:549
+msgid "This email is not registered on the site."
+msgstr ""
+
+#: views/accounts.py:584
+msgid "Your password has been changed."
+msgstr ""
+
+#: views/accounts.py:619 views/site.py:164
+msgid "Copy of message :"
+msgstr ""
+
+#: views/accounts.py:622
+msgid "Your message has been sent."
+msgstr ""
+
+#: views/alerts.py:10
+#, python-format
+msgid "You have been unsubscribed from the text '%(text_title)s'"
+msgstr ""
+
+#: views/alerts.py:12 views/client.py:382
+msgid "You have already been unsubscribed from the text"
+msgstr ""
+
+#: views/client.py:351
+msgid "amended version"
+msgstr ""
+
+#: views/client.py:358
+msgid "amendments were applied with success"
+msgstr ""
+
+#: views/client.py:360
+msgid "there are no amendments on this text"
+msgstr ""
+
+#: views/client.py:372
+msgid "You already subscribed to the text"
+msgstr ""
+
+#: views/client.py:375
+msgid "You subscribed to the text"
+msgstr ""
+
+#: views/client.py:380
+msgid "You have been unsubscribed from the text"
+msgstr ""
+
+#: views/client.py:860
+#, python-format
+msgid "by %(name)s on the %(date)s"
+msgstr ""
+
+#: views/client.py:867
+msgid "tags: "
+msgstr ""
+
+#: views/client.py:923
+msgid "Tags input must be no longer than 250 characters."
+msgstr ""
+
+#: views/embed.py:46
+#, python-format
+msgid "this text has %(nbcomments)d comment(s) and %(nbreplies)d reply(ies)"
+msgstr ""
+
+#: views/embed.py:48
+msgid "click here to view or add comments"
+msgstr ""
+
+#: views/embed.py:50
+msgid "click here to view comments"
+msgstr ""
+
+#: views/feeds.py:25
+msgid "The private feed URL has been reset."
+msgstr ""
+
+#: views/feeds.py:71
+#, python-format
+msgid "Comments and edits for text '%(name)s'"
+msgstr ""
+
+#: views/feeds.py:92
+#, python-format
+msgid "Comment added '%(title)s'"
+msgstr ""
+
+#: views/feeds.py:94
+#, python-format
+msgid "Reply to '%(comment_title)s' added: '%(title)s'"
+msgstr ""
+
+#: views/feeds.py:114
+#, python-format
+msgid "New version created '%(version_note)s'"
+msgstr ""
+
+#: views/feeds.py:116
+msgid "New version created"
+msgstr ""
+
+#: views/feeds.py:132
+msgid "First version created"
+msgstr ""
+
+#: views/public_texts.py:22
+msgid "Please enter a search term"
+msgstr ""
+
+#: views/public_texts.py:24 views/site.py:95
+msgid "search"
+msgstr ""
+
+#: views/site.py:76
+msgid ""
+"You've successfully logged in with OpenId. Please complete your registration."
+msgstr ""
+
+#: views/site.py:110
+msgid "General feedback"
+msgstr ""
+
+#: views/site.py:111
+msgid "Technical problems"
+msgstr ""
+
+#: views/site.py:112
+msgid "Professional services"
+msgstr ""
+
+#: views/site.py:113
+msgid "Other"
+msgstr ""
+
+#: views/site.py:121
+msgid "Your name"
+msgstr ""
+
+#: views/site.py:126
+msgid "Subject of the message"
+msgstr ""
+
+#: views/site.py:127
+msgid "Body of the message"
+msgstr ""
+
+#: views/site.py:129
+msgid "Send me a copy of the email"
+msgstr ""
+
+#: views/site.py:135
+msgid "Topic"
+msgstr ""
+
+#: views/site.py:136
+msgid "Please select a topic"
+msgstr ""
+
+#: views/site.py:166
+msgid "Email sent. We will get back to you as quickly as possible."
+msgstr ""
+
+#: views/text_upload.py:28
+msgid "File"
+msgstr ""
+
+#: views/text_upload.py:57
+msgid "Error uploading text."
+msgstr ""
+
+#: views/text_upload.py:93
+msgid "Text Uploaded."
+msgstr ""
+
+#: views/texts.py:129
+msgid "Title"
+msgstr ""
+
+#: views/texts.py:134
+msgid "Content"
+msgstr ""
+
+#: views/texts.py:138
+msgid "Tags"
+msgstr ""
+
+#: views/texts.py:139
+msgid "separators are space and comma characters"
+msgstr ""
+
+#: views/texts.py:146
+msgid "Create new version"
+msgstr ""
+
+#: views/texts.py:147
+msgid ""
+"versions are copies of your text that let you track and manages changes over "
+"time"
+msgstr ""
+
+#: views/texts.py:151
+msgid "Keep comments"
+msgstr ""
+
+#: views/texts.py:152
+msgid "only comments on unchanged text will be preserved"
+msgstr ""
+
+#: views/texts.py:156
+msgid "Version note"
+msgstr ""
+
+#: views/texts.py:157
+msgid ""
+"short description of the changes made (to appear in this document's history)"
+msgstr ""
+
+#: views/texts.py:187
+msgid "Text updated."
+msgstr ""
+
+#: views/texts.py:255
+msgid "Copy of "
+msgstr ""
+
+#: views/texts.py:258
+msgid "Text duplicated."
+msgstr ""
+
+#: views/texts.py:266
+msgid "Text deleted."
+msgstr ""
+
+#: views/texts.py:273
+msgid "Subject"
+msgstr ""
+
+#: views/texts.py:274
+msgid "enter the subject of the email"
+msgstr ""
+
+#: views/texts.py:278
+msgid "Email content"
+msgstr ""
+
+#: views/texts.py:279
+msgid "enter the content of the email."
+msgstr ""
+
+#: views/texts.py:285
+msgid "Add a link to the text at the end of the email"
+msgstr ""
+
+#: views/texts.py:341
+#, python-format
+msgid "%(number)s email sent."
+msgid_plural "%(number)s emails sent."
+msgstr[0] ""
+msgstr[1] ""
+
+#: views/texts.py:360
+msgid "Text created."
+msgstr ""
+
+#: views/texts.py:392
+#, python-format
+msgid "Reverted to version entitled %(version_title)s."
+msgstr ""
+
+#: views/texts.py:401
+msgid "version deleted"
+msgstr ""
+
+#: views/texts.py:403
+msgid "version not deleted"
+msgstr ""
+
+#: views/texts.py:416
+#, python-format
+msgid ""
+"%(nb_removed)s comment will be removed because its underlying text has been "
+"changed. Do you want to continue ?"
+msgid_plural ""
+"%(nb_removed)s comments will be removed because their underlying text has "
+"been changed. Do you want to continue ?"
+msgstr[0] ""
+msgstr[1] ""
+
+#: views/texts.py:420
+#, python-format
+msgid ""
+"%(nb_removed)s comment will be removed because its underlying text has been "
+"changed. Since you chose not to create a new version these comments will be "
+"definitely lost, do you want to continue ?"
+msgid_plural ""
+"%(nb_removed)s comments will be removed because their underlying text has "
+"been changed. Since you chose not to create a new version these comments "
+"will be definitely lost, do you want to continue ?"
+msgstr[0] ""
+msgstr[1] ""
+
+#: views/texts_settings.py:37
+msgid "user1@example.com"
+msgstr ""
+
+#: views/texts_settings.py:38
+msgid "user2@example.com"
+msgstr ""
+
+#: views/texts_settings.py:65
+#, python-format
+msgid "the following items are not proper email addresses: %(emails)s"
+msgstr ""
+
+#: views/texts_settings.py:99
+msgid ""
+"Enter emails of people you want to share the text with (separated by comma, "
+"space, semicolon or carriage return)"
+msgstr ""
+
+#: views/texts_settings.py:105
+msgid "invite users"
+msgstr ""
+
+#: views/texts_settings.py:106
+msgid "Send an email to the users with a link to the text to notify them"
+msgstr ""
+
+#: views/texts_settings.py:118
+msgid "Choose role to assign"
+msgstr ""
+
+#: views/texts_settings.py:127
+msgid ""
+"... and/or select users among the ones with whom you already collaborate"
+msgstr ""
+
+#: views/texts_settings.py:143
+msgid "please enter email adresses"
+msgstr ""
+
+#: views/texts_settings.py:151
+#, python-format
+msgid "please replace the following items with email addresses: %(emails)s"
+msgstr ""
+
+#: views/texts_settings.py:159
+#, python-format
+msgid "these email addresses are already collaborating on the text: %(emails)s"
+msgstr ""
+
+#: views/texts_settings.py:257
+#, python-format
+msgid "%(number)s collaboration removed !"
+msgid_plural "%(number)s collaborations removed !"
+msgstr[0] ""
+msgstr[1] ""
+
+#: views/texts_settings.py:290
+msgid "Text settings updated."
+msgstr ""
+
+#: views/texts_settings.py:337
+msgid "Nothing added ... please check."
+msgstr ""
+
+#: views/texts_settings.py:341
+msgid "please check some role/permission to delegate to those new users"
+msgstr ""
+
+#: views/texts_settings.py:397
+#, python-format
+msgid "%(number)s new collaboration added."
+msgid_plural "%(number)s new collaborations added."
+msgstr[0] ""
+msgstr[1] ""
+
+#: views/texts_settings.py:418
+msgid "Should comments be approved to be public ?"
+msgstr ""
+
+#: views/texts_settings.py:419
+msgid "Yes"
+msgstr ""
+
+#: views/texts_settings.py:419
+msgid "No"
+msgstr ""
+
+#: views/texts_settings.py:422
+msgid "Choose comment workflow:"
+msgstr ""

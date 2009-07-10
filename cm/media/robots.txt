@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /site_media
+Disallow: /media
+Disallow: /feed

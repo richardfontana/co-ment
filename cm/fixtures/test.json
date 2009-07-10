@@ -1,0 +1,301 @@
+[
+	{
+		"pk": 1,
+		"model": "auth.user", 
+		"fields": {
+			"username": "root", 
+			"first_name": "", 
+			"last_name": "", 
+			"is_active": true, 
+			"is_superuser": true, 
+			"is_staff": true, 
+			"last_login": "2007-10-23 07:19:08", 
+			"groups": [], 
+			"user_permissions": [], 
+			"password": "sha1$dfa0a$a0daa5782862075e726c2e24e8936419a5a327e1", 
+			"email": "dev3@sopinspace.com", 
+			"date_joined": "2007-10-23 07:19:08"
+		}
+	},
+	{
+        "pk": 1,
+        "model": "cm.profile",
+        "fields": {
+            "activation_key": "0f6a75a7f4b58ef672280d8d288fd949d4210b31",
+            "service_level": "FREE",
+            "preferred_language": "fr",
+            "is_temp": false,
+            "allow_contact": true,
+            "user": 1
+        }
+    },	
+	{
+		"pk": 2,
+		"model": "auth.user", 
+		"fields": {
+			"username": "user", 
+			"first_name": "First", 
+			"last_name": "Last", 
+			"is_active": true, 
+			"is_superuser": false, 
+			"is_staff": false, 
+			"last_login": "2007-10-23 07:19:08", 
+			"groups": [], 
+			"user_permissions": [], 
+			"password": "sha1$dfa0a$a0daa5782862075e726c2e24e8936419a5a327e1", 
+			"email": "dev@sopinspace.com", 
+			"date_joined": "2007-10-23 07:19:08"
+		}
+	},
+	{
+        "pk": 2,
+        "model": "cm.profile",
+        "fields": {
+            "activation_key": "0f6a89a7f4b58ef672280d8d288fd949d4210b31",
+            "service_level": "FREE",
+            "preferred_language": "fr",
+            "is_temp": false,
+            "allow_contact": true,
+            "user": 2
+        }
+    },
+	{
+		"pk": 3,
+		"model": "auth.user", 
+		"fields": {
+			"username": "user2", 
+			"first_name": "First2", 
+			"last_name": "Last2", 
+			"is_active": true, 
+			"is_superuser": false, 
+			"is_staff": false, 
+			"last_login": "2007-11-23 07:19:08", 
+			"groups": [], 
+			"user_permissions": [], 
+			"password": "sha1$dfa0a$a0daa5782862075e726c2e24e8936419a5a327e1", 
+			"email": "dev2@sopinspace.com", 
+			"date_joined": "2007-11-23 07:19:08"
+		}
+	},
+	{
+        "pk": 3,
+        "model": "cm.profile",
+        "fields": {
+            "activation_key": "0f6a75a7f4b58ef672440d8d288fd949d4210b31",
+            "service_level": "FREE",
+            "preferred_language": "fr",
+            "is_temp": false,
+            "allow_contact": true,
+            "user": 3
+        }
+    },
+	{
+		"pk": 4,
+		"model": "auth.user", 
+		"fields": {
+			"username": "user3", 
+			"first_name": "First3", 
+			"last_name": "Last3", 
+			"is_active": true, 
+			"is_superuser": false, 
+			"is_staff": false, 
+			"last_login": "2007-10-23 07:19:08", 
+			"groups": [], 
+			"user_permissions": [], 
+			"password": "sha1$dfa0a$a0daa5782862075e726c2e24e8936419a5a327e1", 
+			"email": "dev4@sopinspace.com", 
+			"date_joined": "2007-10-23 07:19:08"
+		}
+	},
+	{
+        "pk": 4,
+        "model": "cm.profile",
+        "fields": {
+            "activation_key": "0f6a75a7f4b58ef672280d8d288fd119d4210b31",
+            "service_level": "FREE",
+            "preferred_language": "fr",
+            "is_temp": false,
+            "allow_contact": true,
+            "user": 4
+        }
+    },    	
+    {
+        "pk": "1",
+        "model": "cm.Text",
+        "fields": {
+        	"creator" : 1,
+            "modified": "2006-06-16 14:00:00",
+            "created": "2006-06-16 14:00:00"
+        }
+    },
+    {
+        "pk": "1",
+        "model": "cm.TextVersion",
+        "fields": {
+        	"text" : 1,
+        	"creator" : 1,
+            "title": "Title of text1 version 1 ...",
+            "content": "this text is set to a priori moderation <br /> <div><b>mot</b> pour mot <b>ouais</b></div>",
+            "modified": "2006-06-16 14:00:00",
+            "created": "2006-06-16 14:00:00",
+        	"comment_workflow" : 1
+        }
+    },
+    {
+    	"pk" : "1",
+        "model": "cm.Comment",
+        "fields": {
+			"text_version" : 1,        
+        	"active" : true,
+        	"start_word" : 1,
+        	"end_word" : 6,
+        	"username" : "some guy",
+        	"email" : "someguy@someplace.com",
+            "title": "A comment in initial state",
+            "content": "I should only be seen by Moderators and Owners",
+            "modified": "2006-06-16 14:00:00",
+            "created": "2006-06-16 14:00:00"
+        }
+    },
+    {
+    	"pk" : "2",
+        "model": "cm.Comment",
+        "fields": {
+			"text_version" : 1,        
+        	"active" : true,
+        	"start_word" : 3,
+        	"end_word" : 6,
+        	"username" : "some other guy",
+        	"email" : "someotherguy@someplace.com",
+            "title": "A comment not in initial state",
+            "content": "I should be seen by Everyone",
+            "modified": "2006-06-16 14:00:00",
+            "created": "2006-06-16 14:00:00"
+        }
+    },
+    {
+        "pk": "1",
+        "model": "cm.ObjectState",
+        "fields": {
+        	"state" : 1,
+            "content_type": 10,
+            "object_id": 1
+        }
+    },
+    {
+        "pk": "2",
+        "model": "cm.ObjectState",
+        "fields": {
+        	"state" : 2,
+            "content_type": 10,
+            "object_id": 2
+        }
+    },
+    {
+        "pk": "2",
+        "model": "cm.Text",
+        "fields": {
+        	"creator" : 2,
+            "modified": "2006-06-16 14:00:00",
+            "created": "2006-06-16 14:00:00"
+        }
+    },
+    {
+        "pk": "3",
+        "model": "cm.Text",
+        "fields": {
+        	"creator" : 2,
+            "modified": "2006-06-16 14:00:00",
+            "created": "2006-06-16 14:00:00"
+        }
+    },
+    {
+        "pk": "2",
+        "model": "cm.TextVersion",
+        "fields": {
+        	"text" : 2,
+        	"creator" : 2,
+            "title": "Title of text2 ...",
+            "content": "<div><b>mot</b> pour mot <b>ouais</b></div>",
+            "modified": "2006-06-16 14:00:00",
+            "created": "2006-06-16 14:00:00",
+        	"comment_workflow" : 1
+        }
+    },
+    {
+        "pk": "4",
+        "model": "cm.TextVersion",
+        "fields": {
+        	"text" : 3,
+        	"creator" : 2,
+            "title": "last revision",
+            "content": "<div><b>mot</b> pour mot <b>ouais</b></div> of last revision",
+            "modified": "2007-06-16 14:00:00",
+            "created": "2007-06-16 14:00:00",
+        	"comment_workflow" : 1
+        }
+    },
+    {
+        "pk": "3",
+        "model": "cm.TextVersion",
+        "fields": {
+        	"text" : 3,
+        	"creator" : 1,
+            "title": "Title ... not last rev",
+            "content": "<div><b>mot</b> pour mot <b>ouais</b></div>",
+            "modified": "2006-06-13 14:00:00",
+            "created": "2006-06-13 14:00:00",
+        	"comment_workflow" : 1
+        }
+    },
+    {
+        "pk": 1,
+        "model": "cm.objectuserrole",
+        "fields": {
+            "role": 1,
+            "user": 2,
+            "content_type": 13,
+            "object_id": 1
+        }
+    },
+    {
+        "pk": 4,
+        "model": "cm.objectuserrole",
+        "fields": {
+            "role": 1,
+            "user": 3,
+            "content_type": 13,
+            "object_id": 1
+        }
+    },
+    {
+        "pk": 5,
+        "model": "cm.objectuserrole",
+        "fields": {
+            "role": 2,
+            "user": null,
+            "content_type": 13,
+            "object_id": 1
+        }
+    },
+    {
+        "pk": 6,
+        "model": "cm.objectuserrole",
+        "fields": {
+            "role": 3,
+            "user": 3,
+            "content_type": 13,
+            "object_id": 1
+        }
+    },
+    {
+        "pk": 7,
+        "model": "cm.objectuserrole",
+        "fields": {
+            "role": 1,
+            "user": 4,
+            "content_type": 13,
+            "object_id": 1
+        }
+    }    
+]

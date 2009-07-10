@@ -1,0 +1,31 @@
+<div class="header">
+	
+	<div id="topbar">
+	<div id="topbar2">
+	    	{% if not no_left_header %}
+				<div class="sitenav">
+				<ul class="navlinks">				
+	      		{% include "layout/header_left.html" %}
+				</ul>
+				</div>
+				<div class="usertools">
+				<ul class="navlinks">			
+		      		{% include "layout/header_right.html" %}
+				</ul>
+				</div>
+		    {% endif %}
+		    
+	    	{% if no_left_header %}
+				<div class="usertools">
+				<ul class="navlinks">			
+		      		{% include "layout/header_left.html" %}
+					<li>&#183;</li>		    
+		      		{% include "layout/header_right.html" %}
+				</ul>	      		
+				</div>
+		    {% endif %}
+	</div>
+	
+	<div style="clear:both;"> </div>
+    </div>
+</div>

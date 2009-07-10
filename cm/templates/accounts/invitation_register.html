@@ -1,0 +1,33 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+
+{% block title %}{% blocktrans with text.get_latest_version.title as title and inviter_user.get_profile.display_name as name %}Invitation on text "{{ title }}" by {{ name }}{% endblocktrans %}{% endblock %}
+
+{% block content %}
+    <h1>{% blocktrans with text.get_latest_version.title as title and inviter_user.get_profile.display_name as name %}Invitation on text "{{ title }}" by {{ name }}{% endblocktrans %}</h1>
+
+    {% if user.is_anonymous %}
+        <table class="two_sides">
+            <tr>
+                <td class="left_side">
+                {% blocktrans with inviter_user.get_profile.display_name as name and text.get_latest_version.title as title %}You've been invited by {{ name }} to collaborate on text "{{ title }}"{% endblocktrans %}
+                <br />
+                <br />
+                {% blocktrans %}Fill in the following form to register and access the text.{% endblocktrans %} 
+                </td>
+                <td class="right_side">
+
+                    <form method="post" action="">
+                    {% include "accounts/register_form.html" %}
+                    <br/>
+                    <input class="high_button" type="submit" value="{% blocktrans %}Register{% endblocktrans %}" />
+                    </form>                    
+                </td>
+            </tr>
+        </table>
+
+{% else %}
+{% blocktrans %}You're already logged-in !{% endblocktrans %}
+{% endif %}
+ 
+{% endblock %}

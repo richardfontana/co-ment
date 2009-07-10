@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head><title>{{ version.title }}</title>
+<link rel="stylesheet" type="text/css" media="screen" href="/site_media/client/css/coment-content.css" />
+
+{% include "layout/textstyle.html" %}
+
+<!-- THIS is used only for manipulating span nodes and using JS cache 
+	TODO : maybe make our own cache -->
+<script type="text/javascript" src="/site_media/lib/ext/adapter/yui/yui-utilities.js"></script>
+<script type="text/javascript" src="/site_media/lib/ext/adapter/yui/ext-yui-adapter.js"></script>
+<script type="text/javascript" src="/site_media/lib/ext/ext-all{{ EXT_EXTENSION }}.js"></script>
+
+<script type="text/javascript">
+var init = function() {
+	if (window && window.parent && window.parent.core) { // we might be in 'print view'
+		var selectionMgr = window.parent.core.SelectionMgr ;
+		
+		// document in next line not window (for IE !)
+		YAHOO.util.Event.addListener(document, "mouseup", selectionMgr.onRetrieveSelection, selectionMgr, true);
+		
+		var txtMgr = window.parent.core.TextMgr ;
+		YAHOO.util.Event.addListener(window.parent.coment.cst.textNodeId, "click", txtMgr.textClick, txtMgr, true);
+		YAHOO.util.Event.addListener(document, "mousedown", txtMgr.downOnFrame, txtMgr, true);
+	 }
+}
+
+YAHOO.util.Event.addListener(window, 'load', init);
+</script>
+</head>
+<body>
+<div id="text">
+{% autoescape off %}
+{{ version.get_spanned_content }}
+{% endautoescape %}
+<span id="c_l_o_s_u_r_e"></span>
+</div>
+<div style="display:none;" id = "so_datas"> {{ so_db }} </div>     
+</body>
+
+</html>
+
+

@@ -1,0 +1,10 @@
+/* this file is designed to be included in iframe when framed */
+#text {
+padding : 10px;
+}
+
+.selected_textpart {
+	/*font-style: italic;*/
+	text-decoration: underline;
+}
+

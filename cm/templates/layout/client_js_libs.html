@@ -1,0 +1,24 @@
+{% if CLIENT_DEBUG  %}
+{# minify build should follow this file order #}
+ <script type="text/javascript" src= "/site_media/client/js/ns_cst.js"></script>
+ <script type="text/javascript" src="/site_media/client/js/core/globals/CookieHandler.js"></script>
+ <script type="text/javascript" src="/site_media/client/js/core/globals/User.js"></script>
+ <script type="text/javascript" src="/site_media/client/js/core/CommentAttachMgr.js"></script>
+ <script type="text/javascript" src="/site_media/client/js/core/globals/ServerExchange.js"></script>
+ <script type="text/javascript" src="/site_media/client/js/core/AttachController.js"></script>
+ <script type="text/javascript" src="/site_media/client/js/core/DiscussionItem.js"></script>
+ <script type="text/javascript" src="/site_media/client/js/core/globals/FilterMgr.js"></script>
+ <script type="text/javascript" src="/site_media/client/js/core/globals/Language.js"></script>
+ <script type="text/javascript" src="/site_media/client/js/util.js"></script>
+ <script type="text/javascript" src= "/site_media/client/js/core/globals/LayoutMgr.js"></script>
+ <script type="text/javascript" src= "/site_media/client/js/core/globals/MenuMgr.js"></script>
+ <script type="text/javascript" src="/site_media/client/js/core/globals/TextMgr.js"></script>
+ <script type="text/javascript" src="/site_media/client/js/core/globals/ExportMgr.js"></script>
+ <script type="text/javascript" src="/site_media/client/js/core/globals/So_Computation.js"></script>
+ <script type="text/javascript" src="/site_media/client/js/core/globals/PrintMgr.js"></script>
+ <script type="text/javascript" src="/site_media/client/js/core/globals/SelectionMgr.js"></script>
+ <script type="text/javascript" src="/site_media/client/js/core/CommentAttach.js"></script>
+ <script type="text/javascript" src= "/site_media/client/js/coment-client.js"></script>
+{% else %} 
+ <script type="text/javascript" src= "/site_media/client/js/comentclient-min.js?1233587516"></script>
+{% endif %}

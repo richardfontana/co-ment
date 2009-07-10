@@ -1,0 +1,26 @@
+{% load i18n %}<div id="editattach" style="display:none;"> {# display:none --> when loading at startup we don't want to see this whole div #}
+	<form method="post" id="editcommentform" onsubmit="return false;">
+	<div id="edit_attach_top">
+		<input class="displaynone" id="edit_attach_id"></input>
+		<input class="displaynone" id="edit_di_id"></input>
+		<input class="displaynone" id="edit_is_reply"></input>
+		<label for="edit_comment_title">{% blocktrans %}Title (required){% endblocktrans %}</label>
+		<input type="text" class="textinput" id="edit_comment_title" size="22"></input>
+		<div class="field_error displaynone" id="error_edit_comment_title"></div>
+		<label for="edit_comment_text">{% blocktrans %}Text (required){% endblocktrans %}</label>
+		<textarea class="textinput" type="text" id="edit_comment_text" cols="40" rows="10"></textarea>
+		<div class="field_error displaynone" id="error_edit_comment_text"></div>
+		<label for="edit_comment_tags">{% blocktrans %}Tags (comma separated){% endblocktrans %}</label>
+		<input type="text" class="textinput" id="edit_comment_tags" size="22"></input>
+		<div class="field_error displaynone" id="error_edit_comment_tags"></div>
+		<div id="edit_attach_sel">
+	        <input type="checkbox" id="edit_modif_scope">&nbsp;<span id="edit_current_sel_label">{% blocktrans %}Also modify the comment's scope{% endblocktrans %}</span></input>
+	        <div id="edit_current_sel" class="displaynone">{% blocktrans %}no selection yet{% endblocktrans %}</div>
+	        <div id="edit_help_current_sel" class="displaynone field_help">{% blocktrans %}Select the part of text the comment should apply to.{% endblocktrans %}</div>
+	        <div id="error_edit_current_sel" class="field_error displaynone"></div>
+	        <br/>
+		</div>
+		<div><table><tr><td><span id="edit_"></span></td><td><span id="edit_cancel"></span></td></tr></table></div>
+	</div>
+	</form>
+</div>

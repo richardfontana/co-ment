@@ -1,0 +1,14 @@
+{% load i18n %}
+{% autoescape off %}
+{{ title }}
+{{ content }}
+
+{% blocktrans with unsubscribe_url as unsubscribe_url %}To access the text, click here:
+{{ site_url }}{{ text_url }}{% endblocktrans %}
+
+{% blocktrans with unsubscribe_url as unsubscribe_url %}To unsubscribe from this text, click here:
+{{ site_url }}{{ unsubscribe_url }}{% endblocktrans %}
+--
+{{ site_name }}
+{{ site_url }}
+{% endautoescape %}

@@ -1,0 +1,58 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>
+        co-ment - {% block title %}{% endblock %}
+	</title>
+
+	<meta name="robots" content="index,follow" />
+    <meta http-equiv="content-language" content="{{ LANGUAGE_CODE }}" />
+    <meta name="description" content="{% blocktrans %}Web-based text annotation{% endblocktrans %}" />
+    {% include "layout/keywords.html" %}
+            
+    <script type="text/javascript" src="/jsi18n/"></script>
+    {% include "layout/yahoo_js_libs.html" %}                                 
+    {% include "layout/jquery_js_libs.html" %}                                 
+    {% include "layout/ext_custom.html" %}                                 
+
+    <script type="text/javascript" src="/site_media/js/cm-utils.js"></script>
+      
+    {% block head %}
+    {% endblock %}
+
+    <link rel="stylesheet" type="text/css" href="/site_media/css/base.css" />   
+    <link rel="stylesheet" type="text/css" href="/site_media/css/baseheader.css" /> 
+    <link rel="shortcut icon" href="/site_media/img/favicon.ico" />
+
+    {% include "layout/custom_coment.html" %}                                 
+</head>
+	<body id="co-ment" class=" yui-skin-sam">
+    
+    <div class="main_panel">
+        {% block header %}
+          {% include "layout/header.html" %}
+        {% endblock %}
+
+	    {% if message %}
+	        <span style="display:none;" id="message_container">
+	              {{ message }}
+	        </span>
+	        <div id="dynamic_message_container">
+	        </div>
+	    {% endif %}
+
+        <div id="main">        
+	        {% block content %}
+	        {% endblock %}        
+        </div>
+        {% block footer %}
+          {% include "layout/footer.html" %}
+        {% endblock %}
+
+    </div>
+    {% include "layout/tracking.html" %}    
+	</body>
+</html>

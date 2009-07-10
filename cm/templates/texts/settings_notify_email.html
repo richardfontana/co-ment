@@ -1,0 +1,9 @@
+{% load i18n %}{% autoescape off %}{% blocktrans with text.get_latest_version.title as title %}You've been added to the participants on text "{{ title }}"{% endblocktrans %}{% endautoescape %}
+
+{% blocktrans %}Click here to access the text :{% endblocktrans %}
+{{ site_url }}{{ activate_url }}
+
+--
+{{ site_name }}
+{{ site_url }}
+

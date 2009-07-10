@@ -1,0 +1,594 @@
+# translation of djangojs.po to
+# co-ment (js).
+# Copyright (C) Sopinspace
+# This file is distributed under the same license as the PACKAGE package.
+#
+# DevSopinspace <dev@sopinspace.com>, 2006, 2008, 2009.
+# renaud bernard <renaud.bernard@sopinspace.com>, 2007, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: djangojs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-01-23 14:58+0100\n"
+"PO-Revision-Date: 2009-01-23 14:59+0100\n"
+"Last-Translator: renaud bernard <renaud.bernard@sopinspace.com>\n"
+"Language-Team:  <fr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:39
+#: media/client/js/core/globals/LayoutMgr.js:87
+msgid "List"
+msgstr "Liste"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:59
+msgid "comment state changed"
+msgstr "état du commentaire modifié"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:59
+msgid "comment state could not be changed"
+msgstr "l'état du commentaire n'a pu être modifié"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:69
+msgid "reply state changed"
+msgstr "état de la réponse modifié"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:69
+msgid "reply state could not be changed"
+msgstr "l'état de la réponse n'a pu être modifié"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:80
+#: media/client/js/core/CommentAttachMgr.js:228
+msgid "comments could not be retrieved"
+msgstr "commentaires non trouvés"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:181
+msgid "tag cloud could not be retrieved"
+msgstr "le nuage de tag n'a pas pu être calculé"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:196
+msgid "no comment has been tagged yet"
+msgstr "aucun commentaire n'a de tag"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:291
+#: media/client/js/core/CommentAttachMgr.js:307
+#: media/client/js/core/CommentAttachMgr.js:311
+msgid "field is required"
+msgstr "champ obligatoire"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:294
+msgid "email is invalid"
+msgstr "email invalide"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:301
+msgid "Select the part you wish to comment in the text diplayed on the right"
+msgstr ""
+"Sélectionner la partie du texte sur laquelle porte le commentaire que vous "
+"voulez faire dans le texte situé à droite"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:319
+msgid "Thank you for your comment. It is being held for moderation."
+msgstr ""
+"Merci pour votre participation. Votre commentaire est en attente de "
+"modération."
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:366
+msgid "comment changed"
+msgstr "commentaire modifié"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:366
+msgid "comment could not be changed"
+msgstr "le commentaire n'a pu être modifié"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:392
+msgid "comment added"
+msgstr "commentaire ajouté"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:392
+msgid "comment could not be added"
+msgstr "le commentaire n'a pu être ajouté"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:545
+msgid "comment deleted"
+msgstr "commentaire supprimé"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:545
+msgid "comment could not be deleted"
+msgstr "le commentaire n'a pu être supprimé"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:568
+msgid "reply deleted"
+msgstr "réponse supprimée"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:568
+msgid "could not delete reply"
+msgstr "impossible de supprimer la réponse"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/ServerExchange.js:11
+msgid "Please wait ..."
+msgstr "Veuillez patienter ..."
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/ServerExchange.js:41
+msgid "unauthorized"
+msgstr "non autorisé"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/ServerExchange.js:45
+msgid "unknown error"
+msgstr "erreur inconnue"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/DiscussionItem.js:32
+msgid "delete reply"
+msgstr "supprimer la réponse"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:113
+#: media/client/js/core/DiscussionItem.js:33
+msgid "edit comment"
+msgstr "éditer le commentaire"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:116
+#: media/client/js/core/DiscussionItem.js:38
+msgid "click to change"
+msgstr "cliquer pour modifier"
+
+#: media/client/js/comentclient-min.js:1 media/client/js/util.js:15
+#: media/client/js/core/DiscussionItem.js:49
+msgid "tags:"
+msgstr "tags :"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/DiscussionItem.js:55
+msgid "Are you sure you want to delete this reply ?"
+msgstr "Etes-vous sûr(e) de vouloir supprimer cette réponse ?"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/Language.js:8
+msgid "F j, Y, \\a\\t g:i a"
+msgstr "j F Y à H:i"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/Language.js:9
+msgid "n/j/Y"
+msgstr "j/n/Y"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/Language.js:10
+msgid ""
+"January|February|March|April|May|June|July|August|September|October|November|"
+"December"
+msgstr ""
+"Janvier|Février|Mars|Avril|Mai|Juin|Juillet|Août|Septembre|Octobre|Novembre|"
+"Décembre"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/Language.js:11
+msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
+msgstr "Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi"
+
+#: media/client/js/comentclient-min.js:1 media/client/js/util.js:5
+msgid "anonymous"
+msgstr "anonyme"
+
+#: media/client/js/comentclient-min.js:1 media/client/js/util.js:8
+msgid "By %(author)s on %(date)s"
+msgstr "Par %(author)s le %(date)s"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:105
+msgid "save changes"
+msgstr "Enregistrer"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:340
+#: media/client/js/core/globals/LayoutMgr.js:111
+#: media/client/js/core/globals/LayoutMgr.js:192
+msgid "cancel"
+msgstr "annuler"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:116
+#: media/client/js/core/globals/MenuMgr.js:15
+msgid "Edit"
+msgstr "Editer"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:126
+msgid "add comment"
+msgstr "Ajouter"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:131
+msgid "Add"
+msgstr "Ajouter"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:142
+msgid "before"
+msgstr "avant"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:142
+msgid "after"
+msgstr "après"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:142
+msgid "between"
+msgstr "entre"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:142
+msgid "no date criteria"
+msgstr "pas de critère de date"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:146
+msgid "comments' text and title"
+msgstr "texte et titre des commentaires"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:146
+msgid "comments' authors"
+msgstr "auteur du commentaire"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:152
+#: media/client/js/core/globals/LayoutMgr.js:306
+msgid "States"
+msgstr "Etats"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:170
+msgid "Choose..."
+msgstr "Choisir..."
+
+# y
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:191
+#: media/client/js/core/globals/LayoutMgr.js:200
+msgid "m/d/Y"
+msgstr "j/n/Y"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:193
+msgid "From"
+msgstr "Du"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:201
+msgid "To"
+msgstr "Au"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:229
+#: media/client/js/core/globals/LayoutMgr.js:273
+#: media/client/js/core/globals/LayoutMgr.js:347
+msgid "All comments"
+msgstr "Tous les commentaires"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:247
+msgid "Text"
+msgstr "Texte"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:254
+msgid "Search"
+msgstr "Rechercher"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:262
+msgid "in"
+msgstr "dans"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:267
+#: media/client/js/core/globals/LayoutMgr.js:342
+msgid "Apply Filter"
+msgstr "Appliquer"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:280
+msgid "Date"
+msgstr "Date"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:403
+msgid "Comments"
+msgstr "Commentaires"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:403
+msgid "View all"
+msgstr "Voir tous"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:586
+msgid "Subscribe"
+msgstr "S'abonner"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:586
+msgid "Unsubscribe"
+msgstr "Se désabonner"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:587
+msgid ""
+"Click to receive email notifications when this text is changed or when a "
+"comment is added"
+msgstr ""
+"Cliquer ici pour recevoir par email les notifications quand le texte est "
+"modifié ou un commentaire ajouté"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:587
+msgid "Click to unsubscribe from email notifications"
+msgstr "Cliquer ici pour vous désabonner des notifications par email"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:6
+msgid "View"
+msgstr "Affichage"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:7
+msgid "Filter"
+msgstr "Filtre"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:8
+msgid "None"
+msgstr "Aucun"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:9
+msgid "Simple"
+msgstr "Simple"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:10
+#: media/client/js/core/globals/MenuMgr.js:30
+msgid "Advanced"
+msgstr "Avancé"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:11
+msgid "Tag cloud"
+msgstr "Nuage de tags"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:13
+msgid "Actions"
+msgstr "Actions"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:16
+msgid "Sharing and moderation"
+msgstr "Partage et modération"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:17
+msgid "Embed"
+msgstr "Encapsuler"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:18
+msgid "Feeds"
+msgstr "Flux"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:20
+msgid "Print"
+msgstr "Imprimer"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:21
+#: media/client/js/core/globals/MenuMgr.js:34
+msgid "Text with (filtered) comments"
+msgstr "Texte avec les commentaires (filtrés)"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:22
+#: media/client/js/core/globals/MenuMgr.js:35
+msgid "Text only"
+msgstr "Texte seulement"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:24
+#: media/client/js/core/globals/MenuMgr.js:27
+#: media/client/js/core/globals/MenuMgr.js:37
+#: media/client/js/core/globals/MenuMgr.js:43
+msgid "As Portable Document Format"
+msgstr "Au format pdf"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:25
+#: media/client/js/core/globals/MenuMgr.js:28
+msgid "From Browser"
+msgstr "Dans le navigateur"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:31
+msgid "Apply amendments"
+msgstr "Appliquer les amendements"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:33
+msgid "Export"
+msgstr "Exporter"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:38
+#: media/client/js/core/globals/MenuMgr.js:44
+msgid "As Rich Text Format"
+msgstr "Au format 'Rich Text Format'"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:39
+#: media/client/js/core/globals/MenuMgr.js:45
+msgid "As Open Document Text"
+msgstr "Au format 'Open Document Text'"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:40
+#: media/client/js/core/globals/MenuMgr.js:46
+msgid "As Microsoft Word 97/2000/XP"
+msgstr "Au format 'Microsoft Word 97/2000/XP'"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:41
+#: media/client/js/core/globals/MenuMgr.js:47
+msgid "As Text Format"
+msgstr "Au format texte"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/TextMgr.js:47
+msgid "amendments could not be added"
+msgstr "les amendements n'ont pas pu être intégrés"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/TextMgr.js:92
+msgid "could not subscribe"
+msgstr "ne peut pas se désabonner"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/SelectionMgr.js:43
+msgid ""
+"Selected text is too long (selection is limited to %(count)s characters). \n"
+"Please retry."
+msgstr ""
+"Le texte sélectionné est trop long (la sélection est limitée à %(count)s "
+"caractères). \n"
+"Réessayer."
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:79
+msgid "%(count)s reply"
+msgstr "%(count)s réponse"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:81
+msgid "%(count)s replies"
+msgstr "%(count)s réponses"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:112
+msgid "delete comment"
+msgstr "supprimer le commentaire"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:119
+msgid "Read"
+msgstr "Lire"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:122
+msgid "Reply"
+msgstr "Répondre"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:123
+msgid "Minimize"
+msgstr "Cacher"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:143
+msgid "Are you sure you want to delete this comment ?"
+msgstr "Etes-vous sûr(e) de vouloir supprimer ce commentaire ?"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:219
+msgid "replies could not be retrieved"
+msgstr "réponses non trouvées"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:319
+msgid "Tags (comma separated)"
+msgstr "Tags (séparés par des virgules)"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:322
+msgid "Name"
+msgstr "Nom"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:323
+msgid "E-mail (will not be published)"
+msgstr "E-mail (ne sera pas rendu public)"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:324
+msgid "Re:"
+msgstr "Re :"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:325
+msgid "Title (required)"
+msgstr "Titre (obligatoire)"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:326
+msgid "Text (required)"
+msgstr "Texte (obligatoire)"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:334
+msgid "add reply"
+msgstr "ajouter une réponse"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:394
+msgid "reply added"
+msgstr "réponse ajoutée"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:394
+msgid "reply could not be added"
+msgstr "la réponse n'a pu être ajoutée"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:407
+msgid "Thank you for your reply. It is being held for moderation."
+msgstr "Merci pour votre participation. Votre réponse est en attente de modération."
+
+#: media/js/cm-utils.js:14
+msgid "yes"
+msgstr "oui"
+
+#: media/js/cm-utils.js:15
+msgid "no"
+msgstr "non"
+
+#: media/js/cm-utils.js:19
+msgid "Warning"
+msgstr "Avertissement"
+

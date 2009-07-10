@@ -1,0 +1,155 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+{% load local_perms %}
+{% load cm_utils %}
+{% block title %}
+    {% ifequal watched_user user %}{% blocktrans %}workspace{% endblocktrans %}
+    {% else %}{% blocktrans with watched_user.username as username %}{{ username }}'s texts{% endblocktrans %} 
+    {% endifequal %}   
+{% endblock %} 
+{% block content %}
+{% ifequal watched_user user %}
+	{% with "list" as current_tab %}
+	{% include "layout/workspace_tabs.html" %}                                 
+	{% endwith %}
+{% else %}
+<h1 id="action_t" class="action_title">
+	{% blocktrans with watched_user.username as username %}{{ username }}'s texts{% endblocktrans %}
+    {% if user.is_authenticated and watched_user.get_profile.can_be_contacted %}
+    <span class="others">
+    | <a href="{% url contact-user watched_user.id %}">{% blocktrans %}contact user{% endblocktrans %}</a>
+    </span>
+    {% endif %}
+</h1>
+{% endifequal %}      
+
+{% include "texts/list_limitations.html" %}                                 
+
+<div id="mytexts">
+<div>
+<div id="textsres_header" class="clearfix">
+
+<div id="textsres_header_left">
+{% blocktrans count paginator.count as counter %}{{ counter }} text{% plural %}{{ counter }} texts{% endblocktrans %}
+</div>
+<div id="textsres_header_right">
+</div>
+</div>
+<div style="clear: both;" />
+
+{% if texts|length_is:0 %}
+    {% ifequal watched_user user %}
+    {% blocktrans %}No text yet.{% endblocktrans %}
+    <br />
+    <a href="{% url text-add %}">{% blocktrans %}Click here to create one directly on the site.{% endblocktrans %}</a>
+    <br />
+    <a href="{% url text-upload %}">{% blocktrans %}Click here to upload a document.{% endblocktrans %}</a>
+    <br />
+    {% endifequal %}
+{% endif %}
+<table width="100%" border="0" id="textresults:texts_table" class="res_table">
+    <tbody>
+    {% for text in texts %}
+    {% with text.get_latest_version as version %}
+        <tr>
+            <td>
+            {% get_local_text_perm '' text can_view_local_text as all_can_view %}
+            {% get_local_text_perm '' text can_add_comment_local_text as all_can_comment %}
+            
+            {% get_local_text_perm user text can_delete_local_text as can_delete %}
+            {% get_local_text_perm user text can_edit_local_text as can_edit %}
+            {% get_local_text_perm user text can_add_comment_local_text as can_comment %}
+            {% get_local_text_perm user text can_change_settings_local_text as can_change_settings %}
+            
+            <div class="res_title_line">
+	            <span class="res_title">
+	            {% if can_comment %}                         
+		            <a title="{% blocktrans %}view & comment{% endblocktrans %}" href="{% url text-viewandcomment text.id %}">{{ version.title }}</a>
+	            {% else %}
+	    	        <a title="{% blocktrans %}view{% endblocktrans %}" href="{% url text-viewandcomment text.id %}">{{ version.title }}</a>
+	            {% endif %}
+				</span>
+	            <!-- action links -->
+					{% spaceless %}
+	                <span class="comment_count">({% blocktrans count text.nbcomments as nb %}{{ nb }} comment{% plural %}{{ nb }} comments{% endblocktrans %}, {% blocktrans count text.nbreplies as nb %}{{ nb }} reply{% plural %}{{ nb }} replies{% endblocktrans %}</span>
+	                {% if can_edit %}                         
+		                <span>,</span>&nbsp;<a href="{% url text-versions text.id %}">{% blocktrans count text.version_number as versions_number %}{{ versions_number }} version{% plural %}{{ versions_number }} versions{% endblocktrans %}</a>
+		            {% endif %}
+	                <span>)</span>            
+					{% endspaceless %}
+	            {% if can_comment %}                         
+	            <a href="{% url text-viewandcomment text.id %}">{% blocktrans %}view & comment{% endblocktrans %}</a>
+	            {% else %}
+	            <a href="{% url text-viewandcomment text.id %}">{% blocktrans %}view{% endblocktrans %}</a>
+	            {% endif %}
+	            {% if can_edit and user.is_authenticated %}            
+	                | <a href="{% url text-edit text.id %}">{% blocktrans %}edit{% endblocktrans %}</a>
+	            {% endif %}
+	            {% if user_can_create_text %}| <a href="{% url text-duplicate text.id %}">{% blocktrans %}duplicate{% endblocktrans %}</a>
+	                {% else %}
+	                {% if user.is_authenticated %}
+	                | <a href="#" title="{% blocktrans %}you can't create more texts{% endblocktrans %}" class="disabled">{% blocktrans %}duplicate{% endblocktrans %}</a>
+	                {% endif %}
+	                {% endif %}
+	            {% if can_delete and user.is_authenticated %}
+	                | <a onclick="coment_confirm('{% blocktrans %}Are you sure you want to delete this text ?{% endblocktrans %}', 
+	                							 function(){window.location = '{% url text-delete text.id %}' ; }) ;"  
+	            href="#">{% blocktrans %}delete{% endblocktrans %}</a>
+	            {% endif %}
+	            | <a href="{% url text-feeds text.id %}">{% blocktrans %}feeds{% endblocktrans %}</a>            
+                | <a href="{% url text-embed text.id %}">{% blocktrans %}embed{% endblocktrans %}</a>
+            </div>
+	
+            <!-- metadata-->
+            <div class="res_metadata">
+	            {% blocktrans %}By{% endblocktrans %} <a href="{% url texts-user text.creator.id %}">{{ text.creator.username }}</a>,
+	            {% blocktrans with text.created|local_date as date %}created on {{ date }}{% endblocktrans %} 
+	            |
+	            {% if can_change_settings %}<a title="{% blocktrans %}edit sharing and moderation properties{% endblocktrans %}" href="{% url text-settings text.id %}">{% blocktrans %}sharing and moderation:{% endblocktrans %}</a>{% else %}{% blocktrans %}sharing:{% endblocktrans %}{% endif %}                         
+	            {% blocktrans %}viewing is{% endblocktrans %}
+	            {# user can view text : no need to check #} 
+	            {% if all_can_view %}
+	                <span class="public_setting">{% blocktrans %}public{% endblocktrans %}</span>{% else %}
+	                {% get_number_local_text_perm text can_view_local_text as number_can_view %}
+	                {% ifequal number_can_view 1 %} {# only 1 can view, I can view : it's me #}
+	                <span class="private_setting">{% blocktrans %}private{% endblocktrans %}</span>{% else %}
+	                <span class="shared_setting">{% blocktrans %}shared{% endblocktrans %}</span>
+	                {% endifequal %}
+	                {% endif %}{% if can_comment %}, {% blocktrans %}commenting is{% endblocktrans %}
+	                    {% if all_can_comment %}                
+	                    <span class="public_setting">{% blocktrans %}public{% endblocktrans %}</span>{% else %}                  
+	                    {% get_number_local_text_perm text can_add_comment_local_text as number_can_comment %}
+	                    {% ifequal number_can_comment 1 %} {# only 1 can comment, I can comment : it's me #}
+	                    <span class="private_setting">{% blocktrans %}private{% endblocktrans %}</span>
+	                    {% else %}
+	                    <span class="shared_setting">{% blocktrans %}shared{% endblocktrans %}</span>                    
+	                    {% endifequal %}
+	                    {% endif %}
+	                {% endif %}
+	        </div>
+	
+	            {% comment %} TODO : croped content            
+            <div class="res_excerpt">{{ version.content_text }}</div>
+            {% endcomment %}
+            </td>
+        </tr>
+    {% endwith %}    
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+<div id="textsres_footer" class="clearfix">
+	<div id="textsres_footer_center">
+	{% if page.has_previous %}
+	<a href="?page={{ page.previous_page_number }}">&laquo;{% blocktrans %}previous{% endblocktrans %}</a>
+	&nbsp;
+	{% endif %}
+	{% blocktrans %}page{% endblocktrans %} {{ page.number }}/{{ paginator.num_pages }}
+	{% if page.has_next %}
+	&nbsp;
+	<a href="?page={{ page.next_page_number }}">{% blocktrans %}next{% endblocktrans %}&raquo;</a>
+	{% endif %}
+	</div>
+</div>
+</div></div>
+{% endblock %}

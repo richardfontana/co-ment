@@ -1,0 +1,71 @@
+{% load i18n %}
+<label>{{ form.email.label }}</label><br />
+{{ form.email }}<br />
+<span class="formhelp">{{ form.email.help_text }}</span><br />
+{{ form.email.errors }}
+
+<label>{{ form.username.label }}</label><br />
+{{ form.username }}<br />
+{{ form.username.errors }}
+
+{% if form.password %}
+<table>
+    <tr>
+        <td>
+            <label>{{ form.password.label }}</label><br />
+            {{ form.password }}<br />
+            <span class="formhelp">{{ form.password.help_text }}</span><br />
+            {{ form.password.errors }}<br />
+        </td>
+        <td>
+            <label>{{ form.password2.label }}</label><br />
+            {{ form.password2 }}<br />
+            <span class="formhelp">{{ form.password2.help_text }}</span><br />
+            {{ form.password2.errors }}<br />
+        </td>
+    </tr>
+</table>
+{% endif %}
+
+{% if form.openid_url %}
+    <label>{{ form.openid_url.label }}</label><br />
+    {{ form.openid_url }}<br />
+    <span class="formhelp">{{ form.openid_url.help_text }}</span><br />
+    {{ form.openid_url.errors }}<br />
+{% endif %}
+
+<table>
+    <tr>
+        <td>
+            <label>{{ form.firstname.label }}</label><br />
+            {{ form.firstname }}<br />
+        </td>
+        <td>
+            <label>{{ form.lastname.label }}</label><br />
+            {{ form.lastname }}<br />
+        </td>
+    </tr>
+</table>
+<br />
+
+<label>{{ form.preferred_language.label }}</label><br />
+{{ form.preferred_language }}<br />
+<span class="formhelp">{{ form.preferred_language.help_text }}</span><br />
+<br />
+
+<label>{% blocktrans %}Terms of Use{% endblocktrans %}</label><br />
+<textarea readonly="readonly" cols="80" rows="5" style="width: 100%; text-align: left;" onfocus="this.rows=10">
+{{ TOU_TXT }}
+</textarea>
+<br />
+
+{{ form.tos }}
+<label>{{ form.tos.label }}</label><br />
+{{ form.tos.errors }}<br/>
+
+{% if has_newsletter %}
+	{{ form.newsletter }}
+	<label>{{ form.newsletter.label }}</label><br />
+	<span class="formhelp">{{ form.newsletter.help_text }}</span><br />
+{% endif %}
+<input type="hidden" name="next_activate" value="{{ next_activate }}" />

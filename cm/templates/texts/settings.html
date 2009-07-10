@@ -1,0 +1,277 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+{% load cm_utils %}
+
+{% block head %}
+{% endblock %}
+
+{% block title %}{{ text.get_latest_version.title }} | {% blocktrans %}Sharing and moderation{% endblocktrans %}{% endblock %}
+
+{% block content %}
+{% with "sharing" as current_tab %}
+{% include "layout/text_tabs.html" %}                                 
+{% endwith %}
+
+<div class="text_title">{{ text.get_latest_version.title }}</div>
+    {% include "texts/settings_limitations.html" %}                                 
+    <table class="two_sides">
+        <tr>
+            <td class="left_side">
+            {% blocktrans %}Here you can change the settings for the text.{% endblocktrans %}
+            <br />
+            <br />
+            {% blocktrans %}You can delegate the possibility for others to see and/or comment on the text, either by inviting selected people or by opening to the public those actions.{% endblocktrans %}                 
+            <br />
+            <br />
+            {% blocktrans %}To make your text publicly viewable, head over to the "Manage users" section and set the "Observer" role to "Anonymous users".{% endblocktrans %}                 
+            </td>
+            <td class="right_side">
+
+                <h2>{% blocktrans %}Add new user(s){% endblocktrans %}</h2>
+                <form method="post" action="">
+                <input type="hidden" id="form_add" name="form" value="add" />              
+                
+                <table width="100%" class="decorate">
+                    <tr>
+                        <td>
+                                {{ add_form.new_emails.label }}
+                        </td>
+                        <td colspan="2">
+                                {{ add_form.new_emails }}
+                                {{ add_form.new_emails.errors }}
+                                {% if add_form.non_field_errors %}
+                                    {{ add_form.non_field_errors }}
+                                {% endif %}
+						</td>
+ 					</tr>
+ 					
+                    {% if add_form.new_users %}
+                    <tr>
+                        <td>
+                                    {{ add_form.new_users.label }}
+                        </td>
+                        <td colspan="2">
+                                    {{ add_form.new_users }}   
+                        </td>
+                    </tr>
+                    {% endif %}
+
+                    <tr class="odd">
+                        <td style="vertical-align: middle;" class="singleusermarker">
+                        {{ add_form.role_add.label }}
+                        </td>
+                        <td width="120px" style="vertical-align: middle;">
+                        {{ add_form.role_add }}
+                        </td>
+                        <td width="230px" style="vertical-align: middle;">
+	                        {% for role_id, role_help in roles_help %}
+	                        <div class="role_class{{ role_id }} role_col" {% ifnotequal role_id default_new_user_roleid %}style="display:none;"{% endifnotequal %}">
+	                        <small>{% autoescape off %}{{ role_help }}{% endautoescape %}</small>
+	                        </div>
+	                        {% endfor %}
+                        </td>
+                    </tr >
+                    <tr>
+                        <td colspan="3">
+                            {{ add_form.invite }}
+                            {{ add_form.invite.help_text }}
+                        </td>
+ 					</tr>
+                    <tr class="bottomborder buttons">
+                        <td colspan="3">
+                            <input class="high_button" type="submit" value="{% blocktrans %}Add user(s){% endblocktrans %}" />
+                        </td>
+                    </tr>                    
+                </table>
+                <br />
+                </form>              
+                
+				<h2>{% blocktrans %}Manage users{% endblocktrans %}</h2>
+                <form method="post" action="">
+                <input type="hidden" id="form_settings" name="form" value="settings" />            
+                <table width="100%" class="decorate">
+                    <tr class="even">
+                        <th width="70px" style="text-align: center;" scope="col">
+                           <input id="all_check" type="checkbox" name="check" ></input>
+                        </th>
+                        <th  class="rightborder">
+                          {% blocktrans %}Name{% endblocktrans %}
+                        </th>
+                        
+                        <th scope="col">
+                           {% blocktrans %}Assigned Role{% endblocktrans %}
+                        </th>
+                        <th >
+                        </th>
+                    </tr>
+                    <tr class="even">
+                        <td width="70px" style="text-align: center; vertical-align: middle;">
+                        </td>
+                        <td style="vertical-align: middle;" class="rightborder">
+							{% blocktrans %}Anonymous users{% endblocktrans %}
+                        </td>
+                        <td width="120px" style="text-align: center; vertical-align: middle;">
+                            {{ users_rights_form.role_others }}
+						</td>
+                        <td width="230px" style="text-align: center; vertical-align: middle;">
+	                        {% for role_id, role_help in roles_help %}
+	                        <div class="role_class{{ role_id }} role_col" {% ifnotequal role_id users_rights_form.initial_role_id_others %}style="display:none;"{% endifnotequal %}">
+	                        <small>{% autoescape off %}{{ role_help }}{% endautoescape %}</small>
+	                        </div>
+	                        {% endfor %}
+					    </td>
+ 					</tr>
+					{% for user_id, user_name, fieldrole, initial_role_id, fieldselect in users_rights_form.dynfields %}                
+                    <tr class="{% cycle 'odd' 'even' %}">
+                        <td width="70px" style="text-align: center; vertical-align: middle;">
+                            {{ fieldselect }}
+                        </td>
+                        <td style="vertical-align: middle;" class="rightborder singleusermarker">
+	                        {{ user_name }}
+                        </td>
+                        <td width="120px" style="text-align: center; vertical-align: middle;">
+                            {{ fieldrole }}
+						</td>
+                        <td width="230px" style="text-align: center; vertical-align: middle;">
+	                        {% for role_id, role_help in roles_help %}
+	                        <div class="role_class{{ role_id }} role_col" {% ifnotequal role_id initial_role_id %}style="display:none;"{% endifnotequal %}">
+	                        <small>{% autoescape off %}{{ role_help }}{% endautoescape %}</small>
+	                        </div>
+	                        {% endfor %}
+                        </td>
+ 					</tr>
+ 					
+                    {% endfor %}                    
+                    <tr class="topborder buttons">
+                        <td colspan="2" scope="col" class="rightborder">
+                            <input id="users_delete" name="settings.invite" class="high_button2" type="submit" value="{% blocktrans %}Email selected users{% endblocktrans %}"/>
+                        </td>
+                        <td colspan="2">
+                        </td>
+                        
+                    </tr>                    
+                    <tr class="topborder buttons">
+                        <td colspan="2" scope="col" class="rightborder">
+                            <input id="users_invite" name="settings.delete" class="high_button2" type="submit" value="{% blocktrans %}Delete selected users{% endblocktrans %}"/>
+                        </td>
+                        <td colspan="2" scope="col">
+                            <input id="roles_save" name="settings.roles" class="high_button2" type="submit" value="{% blocktrans %}Save{% endblocktrans %}" disabled="disabled" />                       
+                        </td>
+                    </tr>                    
+                </table>
+            <script type="text/javascript">
+            var users_delete_button;
+            var users_invite_button;
+            var roles_save_button;
+            var moderation_save_button;
+            
+			var newusers = {
+			    mail: '{% blocktrans %}user1@example.com\nuser2@example.com{% endblocktrans %}',
+			    focus: function() {
+			        if(arguments[0].value==this.mail) arguments[0].value='';    
+			    }/*,
+			    blur: function() {
+			        if(arguments[0].value=='') arguments[0].value=this.mail;
+			    }*/
+			}
+
+            $(document).ready(function() {
+                users_delete_button = new YAHOO.widget.Button($("#users_delete")[0]);
+                users_invite_button = new YAHOO.widget.Button($("#users_invite")[0]);
+                roles_save_button = new YAHOO.widget.Button($("#roles_save")[0]);
+                moderation_save_button = new YAHOO.widget.Button($("#moderation_save")[0],
+												                {
+												                	onclick:{fn:function(){sure_init_comments_state();}}, 
+						                                        	label: "{% blocktrans %}Save{% endblocktrans %}"
+						                                        });
+                users_delete_button.set('disabled',true);
+                users_invite_button.set('disabled',true);            
+                roles_save_button.set('disabled',true);
+                moderation_save_button.set('disabled',true);
+
+                $("#all_check").attr("disabled",$(".singleusermarker").length==0);
+                
+			    $("#id_new_emails").focus(function () {
+			        newusers.focus(this);
+			    });
+            });
+            </script>
+
+                </form>
+ 
+                <br />
+                <h2>{% blocktrans %}Manage workflow and moderation for comments{% endblocktrans %}</h2>
+                
+                <form method="post" name="modandworkflow" action="">
+				<script type="text/javascript">
+				function sure_init_comments_state() {
+					{% if has_comments %}
+		        		{% if is_rich %} var wasRich = true ; {% else %}  var wasRich = false ;{% endif %}
+						var isRich = $('#id_richworkflow_1')[0].checked ;
+						if ((!isRich) && wasRich) { 
+					    	coment_confirm("{% blocktrans %}Some comments on this text will have their state changed back to the initial state. Are you sure you want to continue ?{% endblocktrans %}",
+					    					function(){document.modandworkflow.submit() ; }) ;
+					    }
+					    else 
+					    	document.modandworkflow.submit() ;
+					{% else %}
+				    	document.modandworkflow.submit() ;    
+					{% endif %}
+				};
+				</script>
+                <table width="100%" class="decorate">
+                    <tr>
+                        <td class="no_bold_label">
+			                {{ mod_form.aprioriworkflow.label }}
+			                {{ mod_form.aprioriworkflow }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="no_bold_label">
+			                {{ mod_form.richworkflow.label }}
+			                {{ mod_form.richworkflow }}
+                        </td>
+                    </tr>
+                    <tr class="buttons">
+                        <td>
+		                <input type="hidden" id="form_settings" name="form" value="mod" />
+		                <input id="moderation_save" class="high_button2" type="button"/>                
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+                
+                </form>
+                
+                <br />
+                <a href="{% url texts-user user.id %}">{% blocktrans %}Back to workspace{% endblocktrans %}</a>
+            </td>
+        </tr>
+    </table>
+
+    <script type="text/javascript"><!--
+	$('[id^=id_role_]').change(function () {
+		if ($(this).attr('id') != "id_role_add")
+			roles_save_button.set('disabled',false);
+		val = $(this).val() ;
+		$(this).parent().next().children(".[class^=role_class").css("display","none");
+		$(this).parent().next().children(".role_class"+ val).css("display","");
+	});
+	$('[id^=id_aprioriworkflow_]').change(function () {
+		moderation_save_button.set('disabled',false);
+	});
+	$('[id^=id_richworkflow_]').change(function () {
+		moderation_save_button.set('disabled',false);
+	});
+	$('[id^=id_select_]').click(function () {
+		users_delete_button.set('disabled',false);
+		users_invite_button.set('disabled',false);
+	});
+    $("#all_check").click(function () {
+        $('[id^=id_select_]').attr("checked",this.checked);
+		users_delete_button.set('disabled',false);
+		users_invite_button.set('disabled',false);
+    });
+    </script>                        
+
+{% endblock %}

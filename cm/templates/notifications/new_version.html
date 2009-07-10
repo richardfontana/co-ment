@@ -1,0 +1,9 @@
+{% autoescape off %}
+{{ title }}
+{% if note %}
+<br />
+{{ note }}
+{% endif %}
+<br />
+<a href="{{ SITE_URL}}{{ version_url }}">{{ SITE_URL}}{{ version_url }}</a>
+{% endautoescape %}

@@ -1,0 +1,149 @@
+html,body,form,fieldset {
+	font-size: 13px;
+	/*
+	font-family:"Trebuchet MS","DejaVu Sans Condensed","Tahoma",sans-serif;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	*/
+	/* RBA fom arial,helvetica,sans-serif; */
+	font-family: "HelveticaNeue",Helvetica,Verdana,sans-serif;
+	line-height: 1.25em;
+}
+
+a:link, a:visited {color: #0C2CED; text-decoration:none;}
+a:hover {color:#0063DC;text-decoration:underline;}
+a:active {color: #0C2CED;border-color:#0C2CED}
+
+.sitenav .navlinks li a:link, .sitenav .navlinks li a:visited {color: #ffffff; text-decoration:none;}
+.sitenav .navlinks li a:hover {color:#eeeeee;text-decoration:none;}
+.sitenav .navlinks li a:active {color: #ffffff;}
+
+#homelink a:link, #homelink a:visited, .usertools .navlinks li a:link, .usertools .navlinks li a:visited {color: #ffffff; text-decoration:none;}
+#homelink a:hover, .usertools .navlinks li a:hover {color:#eeeeee;text-decoration:none;}
+#homelink a:active, .usertools .navlinks li a:active {color: #ffffff;}
+
+
+/*
+div.wrapper {
+	float:left;
+	width:100%;
+	text-align: center;
+} 
+div.wrapper div.reduce {
+	width: 950px;
+	margin: auto;	
+	text-align: left; 
+	padding: 2px 4px 4px 4px;
+}
+*/
+.footer {
+	font-size: 92%;
+	color: #A8A8A8;
+}
+
+body {
+	text-align:left;
+}
+
+html > body .main_panel {
+	height:auto;
+}
+
+.main_panel {
+	height:100%;
+	min-height:100%;
+	position:absolute;
+	top:0pt;
+	width:100%;
+}
+
+.content {
+	height:auto;
+}
+
+.footer {
+	bottom:0px;
+	left:0px;
+	overflow:hidden;
+	position:absolute;
+	width:100%;
+}
+
+.footer ul {
+	text-align: right ;
+	margin-top : 5px;
+}
+	
+ul.navlinks li {
+  display: inline; 
+  list-style: none;
+  padding: 0 .5em 0 0;
+  white-space: nowrap;
+}
+
+#somemessage {
+  background-color : #FFF981;
+  border : solid 1px #2FB71A;
+  opacity : 0;
+  font-weight:bold;  
+  padding-left:4px;  
+  padding-right:4px;  
+  position:absolute;
+  top:24px;
+  left:2px;
+}
+
+.somemessage_nodisplay {
+  display : none;
+}
+
+/* Topbar */
+#homelink{font-size:.95em;line-height:1.5em;font-weight:normal;}
+#user_name{font-weight:normal;color:#FFFFFF;}
+div#topbar {background: url(../img/bg/blue-deg.png) repeat-x;background-position:bottom;background-color:#7e90b5;border-bottom:1px solid #7e90b5;font-size:.95em;line-height:1.5em;font-weight:bold;}
+#homelink li, div#topbar li {float:left;padding-right:10px;}
+div#topbar .sitenav {float:left}
+div#topbar .usertools {float:right;}
+
+#footerbar, #topbar2 {
+	width:950px ;
+	margin:auto ;
+	padding:2px 4px 4px ;
+}
+
+.alignright {
+	text-align:right;
+}
+
+.tagsize1 {
+	font-size:11px;
+	cursor: pointer;
+}
+.tagsize2 {
+	font-size:13px;
+	cursor: pointer;
+}
+.tagsize3 {
+	font-size:15px;
+	cursor: pointer;
+}
+.tagsize4 {
+	font-size:17px;
+	cursor: pointer;
+}
+.tagsize5 {
+	font-size:19px;
+	cursor: pointer;
+}
+.tagsize6 {
+	font-size:21px;
+	cursor: pointer;
+}
+.tagsize7 {
+	font-size:23px;
+	cursor: pointer;
+}
+.tagsize8 {
+	font-size:25px;
+	cursor: pointer;
+}
+

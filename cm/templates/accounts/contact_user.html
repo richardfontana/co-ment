@@ -1,0 +1,24 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+
+{% block title %}{% blocktrans with contact_user.get_profile.display_name as name %}Contact user {{ name }}{% endblocktrans %}{% endblock %}
+
+{% block content %}
+<h1>{% blocktrans with contact_user.get_profile.display_name as name %}Contact user {{ name }}{% endblocktrans %}</h1>
+
+<table class="two_sides">
+    <tr>
+        <td class="left_side">
+        {% blocktrans with contact_user.get_profile.display_name as name %}To contact user {{ name }}, fill in the form and click send.{% endblocktrans %}
+        </td>
+        <td class="right_side">
+            <form method="post" action="">
+            {{ form.as_block }}
+            <br/>
+            <input class="high_button" type="submit" value="{% blocktrans %}Send{% endblocktrans %}" />
+            </form>                
+            
+        </td>
+    </tr>
+</table>
+{% endblock %}

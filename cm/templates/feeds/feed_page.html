@@ -1,0 +1,50 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+{% load local_perms %}
+    {% block title %}{{ text.get_latest_version.title }} | {% blocktrans %}feeds{% endblocktrans %}{% endblock %}
+    
+{% block content %}
+{% with "feeds" as current_tab %}
+{% include "layout/text_tabs.html" %}                                 
+{% endwith %}
+
+{% get_local_text_perm '' text can_view_local_text as all_can_view %}
+{% get_local_text_perm user text can_manage_comment_local_text as can_change_settings %}
+
+    <table class="two_sides">
+        <tr>
+            <td class="left_side">
+            {% blocktrans %}Your text's feeds allow you to track any comments or edits on your text using a simple RSS feed reader.{% endblocktrans %}
+            <br />
+            </td>
+            <td class="right_side">
+
+                <h2>{% blocktrans %}Public feed{% endblocktrans %}</h2>
+                {% if all_can_view %}
+                <a href="{% url feed-text text.id %}"><img title="{% blocktrans with text.get_latest_version.title as title %}Feed for text '{{ title }}'{% endblocktrans %}" title="{% blocktrans with text.get_latest_version.title as title %}Public feed for text '{{ title }}'{% endblocktrans %}" alt="{% blocktrans with text.get_latest_version.title as title %}Feed for text '{{ title }}'{% endblocktrans %}" title="{% blocktrans with text.get_latest_version.title as title %}Public feed for text '{{ title }}'{% endblocktrans %}" src="/site_media/img/xml.gif" /></a>
+                {% else %}
+                <img alt="{% blocktrans %}Text is not public, feed is not active{% endblocktrans %}" title="{% blocktrans %}Text is not public, feed is not active{% endblocktrans %}" src="/site_media/img/xml-disabled.gif" />
+                {% endif %}                              
+                <br />
+                {% blocktrans %}This is the public address for your text's feed.{% endblocktrans %}
+                {% if not all_can_view %}                
+                {% blocktrans %}It is not valid unless you have made your text public.{% endblocktrans %}
+                {% endif %}
+				{% if can_change_settings %}
+	                <br />
+	                <br />
+	                <h2>{% blocktrans %}Private feed{% endblocktrans %}</h2>
+	                <a href="{% url private-feed-text text.id,text.secret_key %}"><img title="{% blocktrans with text.get_latest_version.title as title %}Private feed for text '{{ title }}'{% endblocktrans %}" title="{% blocktrans with text.get_latest_version.title as title %}Private feed for text '{{ title }}'{% endblocktrans %}" alt="{% blocktrans with text.get_latest_version.title as title %}Feed for text '{{ title }}'{% endblocktrans %}" title="{% blocktrans with text.get_latest_version.title as title %}Private feed for text '{{ title }}'{% endblocktrans %}" src="/site_media/img/xml.gif" /></a>
+	                (<a href="{% url text-feeds-reset-key text.id %}">{% blocktrans %}reset private URLs{% endblocktrans %}</a>)<br />                                
+	                {% blocktrans %}This is the private address for your text's feed. Don't share this address with others unless you want them to see all the edits and comments on this text.{% endblocktrans %}           
+	                <br />
+	                <br />
+	                <br />
+	                <a href="{% url texts-user user.id %}">{% blocktrans %}Back to workspace{% endblocktrans %}</a>
+                {% endif %}
+                
+            </td>
+            
+       </tr>
+   </table>   
+{% endblock %}

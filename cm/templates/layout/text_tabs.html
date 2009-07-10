@@ -1,0 +1,23 @@
+{% load i18n %}
+{% load local_perms %}
+{% get_local_text_perm user text can_edit_local_text as can_edit %}
+{% get_local_text_perm user text can_add_comment_local_text as can_comment %}
+{% get_local_text_perm user text can_change_settings_local_text as can_change_settings %}
+
+<h1 class="action_title">
+<span class="others">
+	{% if can_comment %}                         
+	<a href="{% url text-viewandcomment text.id %}">{% blocktrans %}view & comment{% endblocktrans %}</a>
+	{% else %}                         
+	<a href="{% url text-viewandcomment text.id %}">{% blocktrans %}view{% endblocktrans %}</a>
+	{% endif %}                         
+</span>
+{% if can_edit and user.is_authenticated%}                         
+| {% ifequal current_tab "edit"%} {% blocktrans %}edit{% endblocktrans %} {% else %}<span class="others"><a href="{% url text-edit text.id %}">{% blocktrans %}edit{% endblocktrans %}</a></span>{% endifequal %}
+{% endif %}                 
+{% if can_change_settings %}                         
+| {% ifequal current_tab "sharing"%} {% blocktrans %}sharing and moderation{% endblocktrans %} {% else %}<span class="others"><a href="{% url text-settings text.id %}">{% blocktrans %}sharing and moderation{% endblocktrans %}</a></span>{% endifequal %}
+{% endif %}                         
+| {% ifequal current_tab "feeds"%} {% blocktrans %}feeds{% endblocktrans %} {% else %}<span class="others"><a href="{% url text-feeds text.id %}">{% blocktrans %}feeds{% endblocktrans %}</a></span>{% endifequal %}
+| {% ifequal current_tab "embed"%} {% blocktrans %}embed{% endblocktrans %} {% else %}<span class="others"><a href="{% url text-embed text.id %}">{% blocktrans %}embed{% endblocktrans %}</a></span>{% endifequal %}
+</h1>

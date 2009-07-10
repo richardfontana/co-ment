@@ -1,0 +1,11 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+
+{% block title %}500 : {% blocktrans %}Internal error{% endblocktrans %}{% endblock %}
+
+{% block content %}
+<h1>500 : {% blocktrans %}Internal error{% endblocktrans %}</h1>
+{% blocktrans %}Internal server error.{% endblocktrans %}
+<br />
+{% blocktrans %}If you'd like to help us with this problem, feel free to contact us using the button at the bottom of the page.{% endblocktrans %}
+{% endblock %}

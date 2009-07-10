@@ -1,0 +1,27 @@
+<style>
+<!-- this css is the default fckeditor toolbar styles css. keep it on top.-->
+.Bold
+{
+	font-weight: bold;
+}
+
+.Title
+{
+	font-weight: bold;
+	font-size: 18px;
+	color: #cc3300;
+}
+
+.Code
+{
+	border: #8b4513 1px solid;
+	padding-right: 5px;
+	padding-left: 5px;
+	color: #000066;
+	font-family: 'Courier New' , Monospace;
+	background-color: #ff9933;
+}
+
+/* the content's css */
+ {% autoescape off %}{{ version.css }}{% endautoescape %}
+</style>

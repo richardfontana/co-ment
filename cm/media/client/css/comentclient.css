@@ -1,0 +1,328 @@
+
+/* don't know */
+html,body,form,fieldset {
+	font-size: 13px;
+	font-family: arial,helvetica,sans-serif;
+	line-height: 1.25em;
+}
+
+#client_header {
+	background:#7E90B5 url(../img/greenbck.png) repeat-x scroll center bottom;
+	z-index:4000; /* for top yui menu with IE */
+}
+
+/* this file is the general client side css */
+#menutab {
+	float:left;
+	/*background-image: url(../img/blue-tab4.gif);*/
+	background-repeat: no-repeat;
+	text-align: left;
+	height: 21px;
+	z-index: 4000;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	border: 0px none;
+	overflow: hidden;
+}
+
+#t_selection {
+	text-align: right;
+	/*	height: 65px;$$$ */
+	height: 30px;
+	float: left;
+	/*	background-color:#F00;*/
+}
+
+select {
+	border: 1px solid #6593cf;
+}
+
+.displaynone {
+	display: none;
+}
+
+.comment_btn {
+	float: right;
+	font-weight: bold;
+	text-decoration: none;
+	z-index: 500;
+	padding: 1px;
+	cursor: pointer;
+}
+
+.comment_delete {
+	background-image: url(../img/delete.gif);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+}
+
+.comment_edit {
+	background-image: url(../img/edit.gif);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+}
+
+.comment_authordate,.comment_nbreplies {
+	font-size: 85%;
+	font-weight: normal;
+}
+
+.comment_wfstate {
+	font-size: 85%;
+	font-weight: normal;
+	margin-right: 5px;
+	color: #2D5593;
+}
+
+.comment_readreply {
+	font-size: 85%;
+	font-weight: normal;
+	margin-right: 5px;
+	color: #2D5593;
+	cursor: pointer;
+}
+
+.comment_wfstate_select {
+	font-size: 85%;
+	font-weight: normal;
+	margin-right: 5px;
+	color: #2D5593;
+}
+
+.comment_header {
+	background-color: #dd9;
+	padding: 1px;
+	display: block;
+	font-weight: bold;
+	cursor: move;
+	line-height: normal;
+}
+
+.comment_body {
+	line-height: normal;
+}
+
+.selectAtt .x-panel-body {
+	background-color: #DFE8F6 ;
+}
+
+.selectAtt2 .x-panel-body {
+	background-color: #DFE8F6 ;
+}
+
+.disp_comment {
+	background-image: url(../img/comment.gif);
+	background-position: 2px 10px;
+	background-repeat: no-repeat;
+	font: normal 12px arial,helvetica,sans-serif;
+	padding: 8px;
+	line-height: normal;
+}
+
+.disp_discussionitem {
+	background-image: url(../img/comments.gif);
+	background-position: 18px 8px;
+	background-repeat: no-repeat;
+	font: normal 12px arial,helvetica,sans-serif;
+	padding: 8px 8px 8px 25px;
+	line-height: normal;
+	border-top: 1px solid #c3daf9;
+}
+
+.comment_title_cls {
+	color: #2d5593;
+	padding-left: 12px;
+	font-weight: bold;
+}
+
+.comment_authordate_cls, .comment_tags_cls {
+	font-size: 85%;
+	color: #2d5593;
+}
+
+.comment_text_cls {
+	font-size: 92%;
+}
+
+#addattach label,#editattach label,.discussattach label {
+	margin: 4px;
+	margin-left: 0px;
+	display: block;
+}
+
+#addattach .textinput, #editattach .textinput, .discussattach .textinput {
+	border: 1px solid #6593cf;
+	width: 100%;
+	padding: 1px;
+	margin-bottom: 2px;
+	font: normal 11px arial,helvetica,sans-serif;
+}
+
+#addattach, #editattach {/*,.discussattach*/
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.discussattach {
+	border-top: 1px solid #c3daf9;
+}
+
+#add_attach_top, #edit_attach_top {/*,.discussattach*/
+	width: 95%;
+}
+
+#edit_current_sel, #current_sel {
+	width: 100%;
+	color: #FFF;
+	background-color: #8F8F88;
+	font: bold 11px arial,helvetica,sans-serif;
+}
+
+#addattach #add_, #editattach #edit_, .discussattach #discuss_ {
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+.field_help, #addattach label, #editattach .field_error, #editattach label, .field_error, .discussattach label, .field_error, #edit_current_sel_label {
+	font: normal 11px arial,helvetica,sans-serif;
+}
+
+#edit_modif_scope {
+	padding:0px;
+	margin:0px;
+}
+	
+.field_error, .requir {
+	color: #F00;
+}
+
+#helpAttachList {
+	padding: 5px;
+}
+
+.field_help {
+	color: #2D5593;
+}
+
+.x-layout-panel .x-tabs-body {
+	background-color: #FBFBEF;
+}
+
+#msgs_msg {
+	font-size: 85%;
+	position:absolute;
+	top:24px;
+}
+.stupid {
+	background-color:#F00;
+}
+
+/* overriding extjs here */
+.x-layout-split {
+	 background-color:#D0D0D0;
+}
+
+#frameContainer {
+	height:100%;
+	width:100%;
+}
+.invisibletext {
+	color:#FFF;
+}
+#filter_left_col .x-panel-bwrap .x-panel-body-noheader,
+#filter_left_col .x-panel-bwrap .x-panel-body,
+#filter_right_col .x-panel-bwrap .x-panel-body-noheader,
+#filter_right_col .x-panel-bwrap .x-panel-body {
+border-color:#FFF;
+}
+
+#simplefilter_apply_btn {
+margin-left : 10px ;
+}
+#advfilter_apply_btn, #tagcloud_view_comments, #advfilter_view_comments {
+margin-bottom : 10px ;
+}
+
+div.yuimenubar {
+    background-color:transparent;
+}
+
+a.yuimenubaritemlabel {
+	padding:3px 24px;
+}
+.yuimenubaritemlabel {
+    border-style:none;
+}
+div.yuimenu ul {
+	padding:2px 0pt;
+}
+.yuimenubaritem a:link,.yuimenubaritem a:visited {
+color:#FFF;
+
+}
+
+
+.yuimenuitemlabel, .yuimenubaritemlabel {
+font-size:0.95em;
+font-weight:bold;
+}
+
+.yuimenubaritem a.selected:link,.yuimenubaritem a.selected:visited {
+	color:#000;
+}
+.yuimenu {
+	background-color:#2FB71A;
+}
+.yuimenuitem a.selected, .yuimenubaritem a.selected {
+	background-color:#DFE8F6;
+	color:#000;
+	text-decoration:none;
+}
+
+.yuimenuitem-checked {
+
+    background: url(../img/menuitem_checkbox_selected.png) left center no-repeat;
+
+}
+
+.yuimenuitem  {
+    *border-bottom: solid 1px #2FB71A;
+}
+
+.yuimenubaritem-selected,
+.yuimenuitem-selected {
+
+    background-color: #33528C;
+
+}
+
+/* to reduce filter fieldset */
+.x-fieldset {
+	margin-bottom:10px;
+	padding:5px;
+}
+
+#tagcloud {
+	color:#2D5593;
+}
+
+.current_tag {
+	background-color:#2D5593;
+	color:#FFF;
+}
+
+#topbar2 {
+	width:auto ;
+}
+
+.pha277 {
+	display:none;	
+}
+
+#view_all_comments, #mail_sub {
+	text-decoration:Underline;
+	font-weight:normal;
+}

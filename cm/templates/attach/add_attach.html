@@ -1,0 +1,33 @@
+{% load i18n %}
+<div id="addattach" style="display:none;"> {# display:none --> when loading at startup we don't want to see this whole div #}
+	<form method="post" id="commentform" onsubmit="return false;">
+	<div id="add_attach_top">
+        {% if user.is_anonymous %} 
+		<div id="add_attach_user">
+	        <label id="add_author_label" for="author">{% blocktrans %}Name{% endblocktrans %}</label>
+	        <input type="text" class="textinput" name="author" id="add_author" size="22"></input>
+	        <div id="error_add_author" class="field_error displaynone"></div>
+	        <label id="add_email_label" for="email">{% blocktrans %}E-mail (will not be published){% endblocktrans %}</label>
+	        <input type="text" class="textinput" name="email" id="add_email" size="22"></input>
+	        <div id="error_add_email" class="field_error displaynone"></div>
+        </div>
+        {% endif %} 
+
+        <label id="current_sel_label" for="current_sel">{% blocktrans %}Comment will apply to this selection of the text:{% endblocktrans %}</label>
+        <div id="current_sel">{% blocktrans %}no selection yet{% endblocktrans %}</div>
+        <div id="help_current_sel" class="field_help">{% blocktrans %}Select the part you wish to comment in the text displayed on the right{% endblocktrans %}</div>
+        <div id="error_current_sel" class="field_error displaynone"></div>
+
+		<label for="add_comment_title">{% blocktrans %}Title (required){% endblocktrans %}<span class="requir">*</span></label>
+		<input type="text" class="textinput" id="add_comment_title" size="22"></input>
+		<div class="field_error displaynone" id="error_add_comment_title"></div>
+		<label for="add_comment_text">{% blocktrans %}Text (required){% endblocktrans %}<span class="requir">*</span></label>
+		<textarea class="textinput" id="add_comment_text" cols="40" rows="10"></textarea>
+		<div class="field_error displaynone" id="error_add_comment_text"></div>
+		<label for="add_comment_tags">{% blocktrans %}Tags (comma separated){% endblocktrans %}</label>
+		<input type="text" class="textinput" id="add_comment_tags" size="22"></input>
+		<div class="field_error displaynone" id="error_add_comment_tags"></div>
+		<div id="add_"></div>
+	</div>
+	</form>
+</div>

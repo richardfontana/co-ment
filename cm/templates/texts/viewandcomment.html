@@ -1,0 +1,429 @@
+{% extends "layout/base_app.html" %}
+{% load local_perms %}
+{% load cm_utils %}
+{% load i18n %}
+        {% block title %}{{ version.title }}{% endblock %}
+
+
+        {% block header %}
+            <style type="text/css" >
+            /* for first loading indicator */
+            .ext-el-mask-msgz span {
+                padding:5px 10px 5px 10px;
+                background: #eee;
+                border:1px solid #D0D0D0;
+                color:#222;
+                font:normal 11px tahoma, arial, helvetica, sans-serif;
+                cursor:wait;
+            }
+            .x-mask-loadingz span {
+                padding:5px 10px 5px 25px;
+                background: #fbfbfb url(/site_media/lib/ext/resources/images/default/grid/loading.gif) no-repeat 5px 5px;
+                line-height: 16px;
+            }
+            .tm {
+                bottom:18px;
+                height:17px;
+                position:absolute;
+                right:0px;
+                text-decoration:none;
+                width:160px;
+                color:#9e9e9e;
+                font:normal 11px tahoma, arial, helvetica, sans-serif;
+            }
+            
+            /* for second loading indicator */
+            #text_frame .ext-el-mask-msg, #attachsregion .ext-el-mask-msg {
+                background:none;
+                border:none;
+            }
+            #text_frame .ext-el-mask-msg div, #attachsregion .ext-el-mask-msg div {
+                border:1px solid #D0D0D0;
+            }           
+            
+            /* for powered by */
+            #tmc a:visited, #tmc a:link {color: #9e9e9e; text-decoration:none;}
+            #tmc a:hover {color:#0063DC;text-decoration:none;}
+            
+            </style>
+        {% endblock %}
+        
+        {% block loadingmsg %}
+        <div id="loadingindicator" >
+            <br /><br /><br /><br />
+            <center>
+                <span class="ext-el-mask-msgz x-mask-loadingz" >
+                    <span id="loadingindicatormsg" >{% blocktrans %}Loading...{% endblocktrans %}</span>
+                </span>
+            </center>
+            <br /> <!--  for IE keep this BR here -->
+        </div>
+        <div id="tmc" ><a target="blank" class="tm" href="{{ site_url}}">{% blocktrans %}powered by co-ment®{% endblocktrans %}</a></div>
+        {% endblock %}
+
+
+        {% block permissions %}
+        {% with versions|first as lastversion %}
+    
+    
+            <script type="text/javascript">
+                // server generated javascript goes here
+                
+                
+                {% if user.is_anonymous %} 
+                    sv_loggedIn = false;
+                    sv_username = ""; 
+                {% else %} 
+                    sv_loggedIn = true;
+                    sv_username = "{{ user.username }}"; 
+                {% endif %}
+                
+                sv_versionId = {{ version.id }}; 
+                sv_addComPerm = false; 
+                sv_manageComPerm = false; 
+                sv_remComPerm = false; 
+                {% ifequal lastversion.id version.id %}
+                    {% get_local_text_perm user version.text can_add_comment_local_text as can_comment %}
+                    {% get_local_text_perm user version.text can_manage_comment_local_text as can_manage_comment %}
+                    
+                    {% if can_comment %} 
+                        sv_addComPerm = true; 
+                    {% endif %}
+                    {% if can_manage_comment %} 
+                        sv_manageComPerm = true; 
+                        sv_remComPerm = true; 
+                    {% endif %}
+                {% endifequal %}
+
+                {% if embeded %} 
+                    sv_embeded = true; 
+                {% else %}  
+                    sv_embeded = false; 
+                {% endif %}
+
+                {% if mailsub %} 
+                    sv_mailsub = true ; 
+                {% else %}  
+                    sv_mailsub = false; 
+                {% endif %}
+
+                {% if so_b %}
+                    sv_frameSrc ="{% url so-text-content version.id %}" ;
+                    sv_so_b = true ;
+                    sv_addComPerm = false; 
+                    sv_manageComPerm = false; 
+                    sv_remComPerm = false; 
+                {% else %} 
+                    sv_frameSrc ="{% url text-content version.id %}" ;
+                    sv_so_b = false ;
+                {% endif %}
+            
+
+                
+                sv_export_url="/versionexport/{{ version.id }}/" ;
+                
+                sv_comment_workflow_states = {% autoescape off %} {{ comment_workflow.states_as_jsdict }} {% endautoescape %};
+                sv_wrkf_initialstateid = {{ comment_workflow.initial_state_id }} ;
+            </script>
+        {% endwith %}
+        {% endblock %}
+
+        {% block init %}
+            <script type="text/javascript">
+               Ext.EventManager.onDocumentReady(initAll.init, initAll, true);
+            </script>
+        {% endblock %}
+
+        {% block content_header %} 
+        {% get_local_text_perm user version.text can_manage_comment_local_text as can_manage_comment %}
+        {% get_local_text_perm user version.text can_edit_local_text as can_edit_text %}
+        {% get_local_text_perm user version.text can_change_settings_local_text as can_change_settings %}
+        
+        {% with versions|first as lastversion %}
+        
+        
+        <div id="attach"></div>
+        
+        <div id="client_header" 
+            {% if embeded %} 
+                style="display:none;"
+            {% endif %}>
+            <div id="menutab">
+                <div id="menudiv" class="yuimenubar">
+                    <div class="bd">
+                        <ul style="display:inline;" class="first-of-type">
+                            <li class="yuimenubaritem first-of-type">
+                                <a id="viewItemBar" href="#"></a>
+                                <div id="viewSubMenu" class="yuimenu">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li id="viewAllCommentsAction" class="yuimenuitem">
+                                                <a href="#">{%blocktrans%}View all comments{%endblocktrans%}</a>
+                                            </li>
+                                            <li class="yuimenuitem">
+                                                <a id="viewFilter" href="#"></a>
+                                                <div id="viewFilterSubMenu" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul class="first-of-type">
+                                                            <li class="yuimenuitem">
+                                                                <a id="viewFilterNone" href="#"></a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a id="viewFilterSimple" href="#"></a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a id="viewFilterAdvanced" href="#"></a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a id="viewFilterTags" href="#"></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenuitem">
+                                                <a id="viewVersions" href="#">{%blocktrans%}Versions{%endblocktrans%}</a>
+                                                <div id="viewVersionsSubMenu" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul class="first-of-type">
+                                                        {% for ver in versions %}
+                                                            <li id="verm_{{ver.id}}" class="yuimenuitem">
+                                                                <a  
+                                                                {% ifequal ver.id version.id %}
+                                                                    href="#"
+                                                                {% else %}
+                                                                    {% if so_b %}
+                                                                        href="{% url so-text-viewandcommentversion ver.text_id ver.id %}"
+                                                                    {% else %}
+                                                                        href="{% url text-viewandcommentversion ver.text_id ver.id %}"
+                                                                    {% endif %}
+                                                                {% endifequal %}
+                                                                >[{{ver.created|local_date}}] {{ver.title}}-{{ver.note}}</a>
+                                                            </li>
+                                                        {% endfor %}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="yuimenubaritem first-of-type">
+                                <a id="actionItemBar" href="#"></a>
+                                <div id="actionSubMenu" class="yuimenu">
+                                    <div class="bd">
+                                        <ul>
+                                            {% if not so_b %}
+
+                                            {% ifequal lastversion.id version.id %}
+	                                            {% if can_edit_text and user.is_authenticated%} 
+	                                            <li class="yuimenuitem">
+	                                                <a id="editAction" href="{% url text-edit version.text_id %}"></a>
+	                                            </li>
+	                                            {% endif %} 
+	                                            {% if can_change_settings %} 
+	                                            <li class="yuimenuitem">
+	                                                <a id="sharingAction" href="{% url text-settings version.text_id %}"></a>
+	                                            </li>
+	                                            {% endif %} 
+	                                            <li class="yuimenuitem">
+	                                                <a id="feedsAction" href="{% url text-feeds version.text_id %}"></a>
+	                                            </li>
+	                                            <li class="yuimenuitem">
+	                                                <a id="embedAction" href="{% url text-embed version.text_id %}"></a>
+	                                            </li>
+                                            {% endifequal %}
+                                             
+                                            {% endif %} 
+                                            <li class="yuimenuitem">
+                                                <a id="printAction" href="#"></a>
+                                                <div id="printActionSubMenu" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a id="printActionTextOnlyItem" href="#">aaaaaaaaaaaa</a>
+
+
+
+
+
+                                                                <div id="printActionTextOnlySubMenu" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a id="printActionTextOnlyAsPdf" href="#"></a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a id="printActionTextOnlyFromBrow" href="#"></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+
+
+
+
+
+
+
+
+
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a id="printActionTextAndCommentsItem" href="#">bbbbbbbbbbbb</a>
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                <div id="printActionTextAndCommentsSubMenu" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a id="printActionTextAndCommentsAsPdf" href="#"></a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a id="printActionTextAndCommentsFromBrow" href="#"></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenuitem">
+                                                <a id="exportAction" href="#"></a>
+                                                <div id="exportActionSubMenu" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul class="first-of-type">
+                                                            <li class="yuimenuitem">
+                                                                <a id="exportActionTextOnly" href="#"></a>
+                                                                <div id="exportActionTextOnlySubMenu" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a id="exportActionTextOnlyAsPdf" href="#"></a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a id="exportActionTextOnlyAsRtf" href="#"></a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a id="exportActionTextOnlyAsOdt" href="#"></a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a id="exportActionTextOnlyAsDoc" href="#"></a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a id="exportActionTextOnlyAsTxt" href="#"></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a id="exportActionTextAndComments" href="#"></a>
+                                                                <div id="exportActionTextAndCommentsSubMenu" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a id="exportActionTextAndCommentsAsPdf" href="#"></a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a id="exportActionTextAndCommentsAsRtf" href="#"></a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a id="exportActionTextAndCommentsAsOdt" href="#"></a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a id="exportActionTextAndCommentsAsDoc" href="#"></a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a id="exportActionTextAndCommentsAsTxt" href="#"></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            {% if not so_b %}
+                                            {% ifequal lastversion.id version.id %}
+                                            {% if can_edit_text and user.is_authenticated %} 
+                                            <li class="yuimenuitem">
+                                                <a id="advancedAction" href="#"></a>
+                                                <div id="advancedActionSubMenu" class="yuimenu">
+                                                   <div class="bd">
+                                                       <ul class="first-of-type">
+                                                           <li class="yuimenuitem">
+                                                               <a id="advancedActionApplyAmendments" href="#"></a>
+                                                           </li>
+                                                       </ul>
+                                                   </div>
+                                               </div>
+                                            </li>
+                                            {% endif %} 
+                                            {% endifequal %}
+                                            {% endif %} 
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {% with "true" as no_left_header %}
+          {% include "layout/header.html" %}
+        {% endwith %}
+            
+        </div>
+        {% endwith %}
+        {% endblock %}
+        
+        {% block content %}
+        {% with versions|first as lastversion %}
+        <div id="msgs_msg">
+            <span id="info_msg"></span><br />
+            <span id="error_msg"></span>
+        </div>
+        
+        <div id="outoflayoutcontainer" class="yui-skin-sam">
+        </div>
+        
+        {% if not so_b %}
+	        {% ifequal lastversion.id version.id %}
+	            {% get_local_text_perm user version.text can_add_comment_local_text as can_comment %}
+	            {% get_local_text_perm user version.text can_manage_comment_local_text as can_manage_comment %}
+	            {% if can_comment %} 
+	                {% include "attach/add_attach.html" %}
+                    {% include "attach/edit_attach.html" %}
+	            {% endif %}
+	        {% endifequal %}
+        {% endif %}
+
+        <div id="frameContainer">
+            <div class="pha277">
+                {% autoescape off %}
+                    {{ version.content }}       <!-- for Search Engines -->
+                {% endautoescape %}
+            </div>
+        </div>
+        <form name="printFilterHiddenForm" id="printFilterHiddenForm" class="displaynone" method="post" action="/versionprint/{{ version.id }}/" target="_blank"></form>        
+        <form name="exportFilterHiddenForm" id="exportFilterHiddenForm" class="displaynone" method="post" action="/versionexport/{{ version.id }}/" ></form>
+        
+        {% endwith %}
+        {% endblock %}

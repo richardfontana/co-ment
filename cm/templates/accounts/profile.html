@@ -1,0 +1,60 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+
+{% block title %}{% blocktrans %}Your profile{% endblocktrans %}{% endblock %}
+
+{% block content %}
+    <h1>{% blocktrans %}Your profile{% endblocktrans %}</h1>
+
+    <table class="two_sides">
+        <tr>
+            <td class="left_side">
+            {% blocktrans %}Your profile contains the informations this site knows about you. We will never disclose this information to any third party. Please make sure the email is right, since this will be the preferred way for the site to communicate with you.{% endblocktrans %}
+            </td>
+            <td class="right_side">
+                <form method="post" action="">
+            
+                <label>{{ form.username.label }}</label><br />
+                {{ form.username }}<br />
+                <span class="formhelp">{{ form.username.help_text }}</span><br />
+                <br />
+
+                <label>{{ form.email.label }}</label><br />
+                {{ form.email }}<br />
+                <span class="formhelp">{{ form.email.help_text }}</span><br />
+                {{ form.email.errors }}
+                
+                <table>
+                    <tr>
+                        <td>
+                            <label>{{ form.firstname.label }}</label><br />
+                            {{ form.firstname }}<br />
+                        </td>
+                        <td>
+                            <label>{{ form.lastname.label }}</label><br />
+                            {{ form.lastname }}<br />
+                        </td>
+                    </tr>
+                </table>
+                <br />
+
+                {{ form.allow_contact }}
+                <label>{{ form.allow_contact.label }}</label><br />
+                <span class="formhelp">{{ form.allow_contact.help_text }}</span><br />
+                <br />
+
+
+                <label>{{ form.preferred_language.label }}</label><br />
+                {{ form.preferred_language }}<br />
+                <span class="formhelp">{{ form.preferred_language.help_text }}</span><br />
+                <br />
+
+				{% include "accounts/profile_limitations.html" %}
+				                                 
+                <input class="high_button" type="submit" value="{% blocktrans %}Update{% endblocktrans %}" />
+                </form>                    
+            </td>
+        </tr>
+    </table>
+
+{% endblock %}

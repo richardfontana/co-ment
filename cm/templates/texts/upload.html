@@ -1,0 +1,27 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+    {% block title %}{% blocktrans %}Upload a text{% endblocktrans %}{% endblock %}
+    
+{% block content %}
+{% with "upload" as current_tab %}
+{% include "layout/workspace_tabs.html" %}                                 
+{% endwith %}
+<table class="two_sides">
+    <tr>
+        <td class="left_side">
+        {% blocktrans %}Select the file to upload.{% endblocktrans %}
+        <br />
+        <br />
+        {% blocktrans %}Supported formats are : Open Office Document, Microsoft Word, Rich Text Format (rtf), Text document (txt), DocBook File, etc.{% endblocktrans %}
+        </td>
+        <td class="right_side">
+            <form enctype="multipart/form-data" method="post" action="">            
+            {{ form.as_block }}        
+            <input class="high_button" type="submit" value="{% blocktrans %}Upload{% endblocktrans %}"/>
+        </form>
+        </td>
+    </tr>
+</table>
+
+    
+{% endblock %}

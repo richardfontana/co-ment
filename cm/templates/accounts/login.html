@@ -1,0 +1,49 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+
+{% block title %}{% blocktrans %}Login{% endblocktrans %}{% endblock %}
+
+{% block content %}
+<h1>{% blocktrans %}Login{% endblocktrans %}</h1>
+
+{% if user.is_anonymous %}
+    <table class="two_sides">
+        <tr>
+            <td class="left_side">
+            {% blocktrans %}To login, please fill in username and password provided during the registration phase.{% endblocktrans %}
+            </td>
+            <td class="right_side">
+                <form method="post" action="">
+                {{ form.as_block }}
+                <br/>
+                <input class="high_button" type="submit" value="{% blocktrans %}Login{% endblocktrans %}"/>
+                <br />
+                <br />
+			    {% if CUST_ALLOWREGISTRATION %}
+                <strong>{% blocktrans %}No account yet ?{% endblocktrans %}</strong> <a href="{% url register %}">{% blocktrans %}Register now.{% endblocktrans %}</a>
+                <br />
+			    {% endif %}
+                <strong>{% blocktrans %}Lost your password ?{% endblocktrans %}</strong> <a href="{% url password-reset %}">{% blocktrans %}Reset your password.{% endblocktrans %}</a>
+                </form>     
+
+                {% if OPENID %}
+                <br />                
+                <label>Connection with OpenID</label>
+
+                <form class="quick_connect" action="{% url openid %}" method="post">
+                <input class="openid" type="text" name="openid_url"></input>
+                <br />
+                
+                <br />
+                <input class="high_button" type="submit" value="{% blocktrans %}Login{% endblocktrans %}"/>
+                </form>
+                {% endif %}
+                           
+            </td>
+        </tr>
+    </table>
+{% else %}
+{% blocktrans %}You're already logged-in{% endblocktrans %}
+{% endif %}
+ 
+{% endblock %}

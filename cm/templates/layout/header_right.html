@@ -1,0 +1,17 @@
+{% load i18n %}
+
+{% if not user.is_anonymous %}
+    <li id="user_name">{% blocktrans with user.username as username %}Signed in as {{ username }}{% endblocktrans %}</li>
+    <li>&#183;</li>
+    <li><a id="to_workspace" href="{% url texts-user user.id %}">{% blocktrans %}Workspace{% endblocktrans %}</a></li>
+    <li>&#183;</li>       
+    <li><a id="to_myprofile" href="{% url profile %}">{% blocktrans %}Your profile{% endblocktrans %}</a></li>    
+    <li>&#183;</li>    
+    <li><a id="to_logout" href="{% url logout %}">{% blocktrans %}Logout{% endblocktrans %}</a></li>
+{% else %}
+    <li><a id="to_login" href="{% url login %}">{% blocktrans %}Login{% endblocktrans %}</a></li>    
+ {% if CUST_ALLOWREGISTRATION %}
+    <li>&#183;</li>
+    <li><a id="to_register" href="{% url register %}">{% blocktrans %}Register{% endblocktrans %}</a></li>
+ {% endif %}
+{% endif %}

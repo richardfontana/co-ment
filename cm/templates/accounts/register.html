@@ -1,0 +1,32 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+
+{% block title %}{% blocktrans %}New co-ment User{% endblocktrans %}{% endblock %}
+
+{% block content %}
+    <h1>{% blocktrans %}New co-ment User{% endblocktrans %}</h1>
+
+    {% if user.is_anonymous %}
+        <table class="two_sides">
+            <tr>
+                <td class="left_side">
+                {% blocktrans %}Access to this co-ment service requires only registration and is free of charge.{% endblocktrans %}
+                </td>
+                <td class="right_side">
+                
+                    <form method="post" action="">
+                    
+                    {% include "accounts/register_form.html" %}
+                    
+                    <br/>
+                    <input class="high_button" type="submit" value="{% blocktrans %}Register{% endblocktrans %}" />
+                    </form>                    
+                </td>
+            </tr>
+        </table>
+
+{% else %}
+{% blocktrans %}You're already logged-in.{% endblocktrans %}
+{% endif %}
+ 
+{% endblock %}

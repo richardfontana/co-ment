@@ -1,0 +1,176 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+{% load local_perms %}
+{% load cm_utils %}
+    {% block title %}{% blocktrans %}Search in public texts{% endblocktrans %}{% endblock %}
+    
+{% block content %}
+<h1 id="action_t" class="action_title">
+{% if current_tag or from_search %}
+	<span class="others">
+	<a href="{% url list-public %}">{% blocktrans %}View all public texts{% endblocktrans %}</a>
+	</span>|
+	{% if current_tag %}
+		{% blocktrans with current_tag.name as tag_name %}Tagged texts : {{ tag_name }}{% endblocktrans %}
+	{% else %}
+	    {% blocktrans with search_string as search_string %}Search in public texts for '{{ search_string }}'{% endblocktrans %}
+	{% endif %}
+{% else %}
+	{% blocktrans %}View all public texts{% endblocktrans %}
+{% endif %}
+</h1>
+<div>
+	<table width="100%">
+	<tr>
+	<td width="55%" style="vertical-align:middle;">
+		<form class="no_error_icons" method="get" action="">
+		<div>&nbsp;</div>         
+		{{ search_form.q }}        
+		<input class="high_button" type="submit" value="{% blocktrans %}Search{% endblocktrans %}"/>
+		{{ search_form.q.errors }}        
+		</form>
+	</td>
+	<td width="5%">
+	</td>
+	<td width="40%">
+		<div id="tags">
+			{% for tag in tag_cloud %}
+			<a href="{% url list-public %}?tag_id={{ tag.id }}" class="tagsize{{ tag.font_size }}" id="tag-{{ tag.id }}">{{ tag.name }}</a>
+			{% endfor %}    
+		</div>
+	</td>
+	</tr>
+	</table>
+</div>
+<br/>
+
+<div id="mytexts">
+<div>
+
+{% if current_tag %}
+	<div id="textsres_header" class="clearfix">
+		<div id="textsres_header_left">
+			{% blocktrans count paginator.count as nb and current_tag.name as current_tag_name %}{{ nb }} text tagged '{{ current_tag_name}}'{% plural %}{{ nb }} texts tagged '{{ current_tag_name}}'{% endblocktrans %}
+		</div>
+	</div>
+	
+	<div style="clear: both;" />
+	<table width="100%" border="0" id="textresults:texts_table" class="res_table">
+	    <tbody>
+	
+		{% for text in texts %}
+	    {% with text.get_latest_version as version %}
+	        <tr>
+	            <td>
+	            <div class="res_title_line_search"><span class="res_title"><a title="{% blocktrans %}view{% endblocktrans %}" href="{% url text-viewandcomment text.id %}">{{ version.title }}</a></span>
+			    {% with version.get_public_commentsandreplies_count as publiccommentsandreplies_count  %}
+			         <span class="comment_count">({% blocktrans count publiccommentsandreplies_count|first as nb %}{{ nb }} comment{% plural %}{{ nb }} comments{% endblocktrans %}, {% blocktrans count publiccommentsandreplies_count|last as nb %}{{ nb }} reply{% plural %}{{ nb }} replies{% endblocktrans %})</span>
+			    {% endwith %}
+			    <a href="{% url feed-text text.id %}"><img alt="{% blocktrans with text.get_latest_version.title as title %}Feed for text '{{ title }}'{% endblocktrans %}" title="{% blocktrans with text.get_latest_version.title as title %}Feed for text '{{ title }}'{% endblocktrans %}" src="/site_media/img/xml-pale.gif" /></a>        
+	
+	            <!-- metadata-->
+	            <div class="res_metadata">
+	            {% blocktrans %}By{% endblocktrans %} <a href="{% url texts-user text.creator.id %}">{{ text.creator.username }}</a>,
+	            {% blocktrans with text.created|local_date as date %}created on {{ date }}{% endblocktrans %} 
+	            </div>
+	
+	            <!-- croped content -->
+	            {% if text.excerpt %}
+	            <div class="res_excerpt">
+	            {% autoescape off %}
+	            {{ text.excerpt|striptags|replace_high }}
+	            {% endautoescape %}
+	            {% endif %}
+	            </div>
+	            </td>
+	        </tr>
+	    {% endwith %}    
+	    {% endfor %}
+	    </tbody>
+	</table>
+	</div>
+{% else %}
+	{% if not texts|length_is:0 or search_string %}
+	<div id="textsres_header" class="clearfix">
+		<div id="textsres_header_left">
+		{% if search_string %}
+		{% blocktrans count paginator.count as counter %}{{ counter }} text for '{{ search_string}}'{% plural %}{{ counter }} texts for '{{ search_string}}'{% endblocktrans %}
+		{% else %}
+		{% blocktrans count paginator.count as counter %}{{ counter }} text{% plural %}{{ counter }} texts{% endblocktrans %}
+		{% endif %}
+		</div>
+		
+		<div id="textsres_header_right">
+		</div>
+	</div>
+	
+	<div style="clear: both;" />
+	{% if texts|length_is:0 %}
+	    <strong>{% blocktrans with search_string as search_string %}No results for query '{{ search_string }}'.{% endblocktrans %}</strong>
+	{% endif %}
+	<table width="100%" border="0" id="textresults:texts_table" class="res_table">
+	    <tbody>
+	    {% for text in texts %}
+	    {% with text.get_latest_version as version %}
+	        <tr>
+	            <td>
+	            <div class="res_title_line_search"><span class="res_title"><a title="{% blocktrans %}view{% endblocktrans %}" href="{% url text-viewandcomment text.id %}">{{ version.title }}</a></span>
+	            {% with version.get_commentsandreplies_count as comments_number %}
+	                <span class="comment_count">({% blocktrans count text.nbcomments as nb %}{{ nb }} comment{% plural %}{{ nb }} comments{% endblocktrans %}, {% blocktrans count text.nbreplies as nb %}{{ nb }} reply{% plural %}{{ nb }} replies{% endblocktrans %})</span>
+	            {% endwith %}
+			    <a href="{% url feed-text text.id %}"><img alt="{% blocktrans with text.get_latest_version.title as title %}Feed for text '{{ title }}'{% endblocktrans %}" title="{% blocktrans with text.get_latest_version.title as title %}Feed for text '{{ title }}'{% endblocktrans %}" src="/site_media/img/xml-pale.gif" /></a>        
+	
+	            <!-- metadata-->
+	            <div class="res_metadata">
+	            {% blocktrans %}By{% endblocktrans %} <a href="{% url texts-user text.creator.id %}">{{ text.creator.username }}</a>,
+	            {% blocktrans with text.created|local_date as date %}created on {{ date }}{% endblocktrans %} 
+	            </div>
+	
+	            <!-- croped content -->
+	            {% if text.excerpt %}
+	            <div class="res_excerpt">
+	            {% autoescape off %}
+	            {{ text.excerpt|striptags|replace_high }}
+	            {% endautoescape %}
+	            {% endif %}
+	            </div>
+	            </td>
+	        </tr>
+	    {% endwith %}    
+	    {% endfor %}
+	    </tbody>
+	</table>
+	</div>
+	{% endif %}
+{% endif %}
+<div id="textsres_footer" class="clearfix">
+	<div id="textsres_footer_center">
+	{% if page.has_previous %}
+	<a href="?page={{ page.previous_page_number }}">&laquo;{% blocktrans %}previous{% endblocktrans %}</a>
+	&nbsp;
+	{% endif %}
+	{% blocktrans %}page{% endblocktrans %} {{ page.number }}/{{ paginator.num_pages }}
+	{% if page.has_next %}
+	&nbsp;
+        {% if tag_id %}
+	       <a href="?page={{ page.next_page_number }}&tag_id={{ tag_id }}">{% blocktrans %}next{% endblocktrans %}&raquo;</a>
+        {% else %}
+            {% if search_string %}
+                <a href="?page={{ page.next_page_number }}&q={{ search_string }}">{% blocktrans %}next{% endblocktrans %}&raquo;</a>
+            {% else %}
+                <a href="?page={{ page.next_page_number }}">{% blocktrans %}next{% endblocktrans %}&raquo;</a>           
+            {% endif %}
+        {% endif %}
+	{% endif %}
+	</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#tags").corner("6px") ;
+	}) ;
+	
+</script>
+{% endblock %}

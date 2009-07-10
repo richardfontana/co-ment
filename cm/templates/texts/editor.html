@@ -1,0 +1,157 @@
+{% load i18n %}<div style="width;100%;" class="yui-skin-sam">
+<form method="post" name="editform" action="">
+{{ form.as_block }}
+
+<input id="continueediting" name="continueediting" type="hidden" />
+
+<input id="id_precreate" class="high_button" 
+value="{% blocktrans %}Save{% endblocktrans %}" />
+
+&nbsp;&nbsp;
+
+<input id="id_precreateandcontinue" class="high_button" 
+value="{% blocktrans %}Save and continue editing{% endblocktrans %}" />
+</form>
+
+<script type="text/javascript">
+
+function save(){
+	document.editform.submit() ;
+};  
+
+function afterCommentsToRemoveWarning(btn) {
+	if (btn == "yes") {
+		save() ;
+	}
+};
+
+function jsDebugTrace(array){
+	var sss = "{% url debug-trace %}" ;
+	var callback = {
+			success: function(oResponse){
+			},
+			failure: function(){
+			}
+		};
+		
+	var request = YAHOO.util.Connect.asyncRequest('POST', 
+			sss, 
+			callback, 
+			Ext.urlEncode(array));
+}
+function checkForCommentsToRemove(){
+	var callback = {
+		success: function(oResponse){
+			var ret = {};
+			if (oResponse.responseText) 
+				ret = Ext.util.JSON.decode(oResponse.responseText);
+				if (ret['nb_removed'] > 0) {
+					Ext.MessageBox.show({
+				           title:"{% blocktrans %}Warning{% endblocktrans %}",
+				           msg: ret['warning_message'],
+				           buttons: Ext.MessageBox.YESNO,
+				           fn: afterCommentsToRemoveWarning,
+				           icon: Ext.MessageBox.QUESTION
+				       });
+				       
+				}
+				else {
+					save() ;
+				}							
+		},
+		failure: function(){
+			alert('failure') ;
+		}
+	};
+	
+	FCKeditorAPI.GetInstance('id_content').UpdateLinkedField();
+{% if text %}
+	var sss = "{% url text-precreate text.get_latest_version.id %}" ; 
+{% else %}
+	var sss = "" ; 
+{% endif %}
+
+	var content_js = YAHOO.util.Dom.get('id_content').value ;
+	var cnv_js = YAHOO.util.Dom.get('id_create_new_version').checked ;
+	var encoded = Ext.urlEncode({content:content_js, create_new_version:cnv_js}) ;
+	if (encoded.indexOf("create_new_version=") == -1) {
+		toTrace = Array() ;
+		toTrace['id_content'] = (YAHOO.util.Dom.get('id_content') == null)? 'null':'ok' ;
+		toTrace['content_js'] = content_js ;
+		toTrace['id_create_new_version'] = (YAHOO.util.Dom.get('id_create_new_version') == null)? 'null':'ok' ;
+		toTrace['cnv_js'] = cnv_js ;
+		toTrace['encoded'] = encoded ;
+				
+		jsDebugTrace(toTrace) ;
+	}
+	var request = YAHOO.util.Connect.asyncRequest('POST', sss, callback, encoded);
+};  
+function check_save(){
+	var userWantsNewVersion = YAHOO.util.Dom.get('id_create_new_version').checked ;
+	var userWantsCommentsKept = YAHOO.util.Dom.get('id_keep_comments').checked ;
+	
+	if (userWantsCommentsKept) {
+		checkForCommentsToRemove() ;
+	}
+	else {
+		if (!userWantsNewVersion) {
+			Ext.MessageBox.show({
+				           title:"{% blocktrans %}Warning{% endblocktrans %}",
+				           msg: "{% blocktrans %}Since you chose not to create a new version all comments will be definitely lost, do you want to continue ?{% endblocktrans %}",
+				           buttons: Ext.MessageBox.YESNO,
+				           fn: afterCommentsToRemoveWarning,
+				           icon: Ext.MessageBox.QUESTION
+				       });
+		}
+		else {
+			save() ;
+		}
+	}
+};
+function setContinueEditing(){
+	$("#continueediting").val(1) ;
+};
+function setDoNotContinueEditing(){
+	$("#continueediting").val(0) ;
+};
+
+$(document).ready(function()
+{
+    var oFCKeditor = new FCKeditor( "id_content" ) ;
+    oFCKeditor.BasePath = '/site_media/lib/fckeditor/' ;
+    oFCKeditor.Config["CustomConfigurationsPath"] = "/site_media/js/FCKConfig.js"  ;
+    oFCKeditor.Height = 450;    
+    {% if version %}
+    oFCKeditor.Config["EditorAreaCSS"] = '{% url text-versioncss version.id %}' ;
+    {% endif %}    
+    oFCKeditor.ReplaceTextarea() ;
+
+    {% if has_comments %}
+	    $("#id_precreate").click(function () {
+	    	setDoNotContinueEditing() ;
+	    	check_save();
+	    	}) ;
+	    $("#id_precreateandcontinue").click(function () {
+	    	setContinueEditing() ;
+	    	check_save();
+	    	}) ;
+	{% else %}
+	    $("#id_precreate").click(function () {
+	    	setDoNotContinueEditing() ;
+	    	save();
+    	}) ;
+	    $("#id_precreateandcontinue").click(function () {
+	    	setContinueEditing() ;
+	    	save();
+    	}) ;
+
+	   	$('#id_keep_comments').css("display", "none"); 
+	   	$('#id_keep_comments').prev().css("display", "none"); 
+	   	$('#id_keep_comments').prev().prev().css("display", "none"); 
+	   	$('#id_keep_comments').next().css("display", "none"); 
+	   	$('#id_keep_comments').next().next().css("display", "none");
+    {% endif %}
+});
+
+</script>
+</div> 

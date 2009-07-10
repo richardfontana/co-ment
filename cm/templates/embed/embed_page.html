@@ -1,0 +1,63 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+{% load local_perms %}
+{% block title %}{{ text.get_latest_version.title }} | {% blocktrans %}embed{% endblocktrans %}{% endblock %}
+    
+{% block content %}
+{% with "embed" as current_tab %}
+{% include "layout/text_tabs.html" %}                                 
+{% endwith %}
+
+{% get_local_text_perm '' text can_view_local_text as all_can_view %}
+
+    <table class="two_sides">
+        <tr>
+            <td class="left_side">
+            {% blocktrans %}To insert your text (with or without its comments) into your web site, just copy and paste the following code into your web page.{% endblocktrans %}
+            <br />
+            </td>
+            <td class="right_side">
+
+                {% if all_can_view %}
+                <h2>{% blocktrans %}Public text view with comments (recommended){% endblocktrans %}</h2>
+                {% blocktrans %}Copy this code into your site to display text with comments.{% endblocktrans %}
+                {% blocktrans %}Allowed Users will also be able to add comments from your site.{% endblocktrans %}
+                <br />
+                <textarea style="margin-top: 10px;" cols="80" rows="5">
+<iframe src="{{ site_url }}{% url embed text.id,"public_view" %}" style="border: 1px solid #D0D0D0;" width="800" height="600" frameborder="1" scrolling="no">
+</iframe>
+                </textarea>
+                <br />
+                <br />
+                <h2>{% blocktrans %}Public text view without comments{% endblocktrans %}</h2>
+                {% blocktrans %}Copy this code into your site to display text without comments.{% endblocktrans %}
+                <br />
+                <textarea style="margin-top: 10px;" cols="80" rows="5">
+<iframe src="{{ site_url }}{% url embed text.id,"public_view_textonly" %}" style="border: 1px solid #D0D0D0;" width="800" height="600" frameborder="1" scrolling="no">
+</iframe>
+                </textarea>
+                
+                {% else %}
+                <h2>{% blocktrans %}Public text view{% endblocktrans %}</h2>
+	                {% blocktrans %}Text must be public to activate this feature.{% endblocktrans %}
+		            <br />
+    	           	{% if not user.is_anonymous %}
+			            {% get_local_text_perm user text can_change_settings_local_text as all_change_settings %}
+	                	{% if all_change_settings %}
+							<a href="{% url text-settings text.id %}">{% blocktrans %}Click here to change sharing settings.{% endblocktrans %}</a>
+						{% endif %}                
+					{% endif %}                
+				{% endif %}                
+                <br />
+
+                <br />
+                <br />
+                <br />
+               	{% if not user.is_anonymous %}
+	                <a href="{% url texts-user user.id %}">{% blocktrans %}Back to workspace{% endblocktrans %}</a>
+				{% endif %}                
+            </td>
+            
+       </tr>
+   </table>
+{% endblock %}

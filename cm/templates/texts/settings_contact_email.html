@@ -1,0 +1,10 @@
+{% load i18n %}{% autoescape off %}{{ body }}{% endautoescape %}
+
+{% if link_url %}
+{% blocktrans %}Click here to access the text :{% endblocktrans %}
+{{ site_url }}{{ link_url }}
+{% endif %}
+--
+{{ site_name }}
+{{ site_url }}
+

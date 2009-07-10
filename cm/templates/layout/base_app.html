@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>
+        co-ment - {% block title %}{% endblock %}
+	</title>
+
+    <meta name="robots" content="index,follow" />
+    <meta http-equiv="content-language" content="{{ LANGUAGE_CODE }}" />
+    <meta name="description" content="co-ment - {{ version.title}}" />
+    {% block header %}
+	{% endblock %}    
+    {% include "layout/keywords.html" %}
+    {% include "layout/jquery_js_libs.html" %}                                 
+
+    {% include "layout/ext_js_libs.html" %} 
+    {% include "layout/yahoo_js_libs_client.html" %}
+
+    <link rel="stylesheet" type="text/css" href="/site_media/lib/ext/resources/css/xtheme-gray.css" />
+    <link rel="stylesheet" type="text/css" href="/site_media/css/baseheader.css"/>
+    <link rel="stylesheet" type="text/css" href="/site_media/client/css/comentclient.css"/>
+    {% include "layout/custom_coment.html" %}                                 
+</head>
+	<body>
+
+    {% block loadingmsg %}
+    {% endblock %}
+	
+    <script type="text/javascript" src="/jsi18n/"></script>
+ 
+    {% block permissions %}
+    {% endblock %}
+
+	{% include "layout/client_js_libs.html" %}
+
+    {% block init %}
+    {% endblock %}
+
+    {% block content_header %}
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+           
+    {% include "layout/tracking.html" %}
+	</body>    
+</html>

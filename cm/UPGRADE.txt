@@ -1,0 +1,38 @@
+========================
+Upgrading procedures
+========================
+
+Upgrading between 0.9 and 0.98
+===============================
+
+From postgresql 8.2 to 8.3
+---------------------------
+co-ment 0.9 was using Postgresql 8.2 and co-ment 1.0 is using Postgresql 8.3
+
+One of the key differences between Postgresql 8.2 and 8.3 is the inclusion of the full text search utilities into the core.
+
+Here is the recommended upgrade procedure :
+
+1. Clean Postgresql 8.2 specifics in your previous installation:
+-- execute this on any previous co-ment installation
+DROP TRIGGER tsvectorupdate_cm_textversion ON cm_textversion;
+DROP INDEX idxFTI_idx;
+ALTER TABLE cm_textversion DROP COLUMN idxFTI;
+DROP TABLE pg_ts_dict;
+ 
+2. Upgrade from Postgresql 8.2 to 8.3 (you might want to look into pg_upgradecluster)
+
+3. Make sure you're using co-ment 0.98 and restart the webserver
+
+That should be it!
+
+A syncdb is needed
+--------------------
+New tables where introduced in the 0.98 release, a simple 'python manage.py syncdb' should be all what's needed to create and configure them.
+
+
+Upgrading between 0.98 and 0.99
+===============================
+
+This is only a bug fix release, no particular upgrade should be required.
+(Make sure your settings.py has a OPENID = False line in it)

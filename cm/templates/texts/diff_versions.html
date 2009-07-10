@@ -1,0 +1,50 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+{% load cm_utils %}
+    {% block title %}{% blocktrans %}Difference between versions{% endblocktrans %}{% endblock %}
+    
+{% block content %}
+<h1>{% blocktrans %}Difference between versions{% endblocktrans %}</h1>
+
+<table class="two_sides">
+    <tr>
+        <td class="left_side">
+        {% blocktrans %}This is the difference between the two versions :{% endblocktrans %}
+        <br />        
+        1. "{{ rev_1.title }}"
+        <br />        
+        <span class="res_metadata">
+        {% blocktrans %}By{% endblocktrans %} <a href="{% url texts-user rev_1.creator.id %}">{{ rev_1.creator.username }}</a>,
+        {% blocktrans with rev_1.created|local_date as date %}created on {{ date }}{% endblocktrans %} 
+        </span>
+        <br />
+        <br />
+        2. "{{ rev_2.title }}"
+        <br />        
+        <span class="res_metadata">
+        {% blocktrans %}By{% endblocktrans %} <a href="{% url texts-user rev_2.creator.id %}">{{ rev_2.creator.username }}</a>,
+        {% blocktrans with rev_2.created|local_date as date %}created on {{ date }}{% endblocktrans %} 
+        </span>
+
+        <br />
+        <br />
+        {% blocktrans %}Legend :{% endblocktrans %}
+        <br />
+        <ins>{% blocktrans %}text inserted in most recent version{% endblocktrans %}</ins>        
+        <br />        
+        <del>{% blocktrans %}text deleted in most recent version{% endblocktrans %}</del>
+                
+        
+        <br />        
+        <br />
+        <a href="{% url text-versions rev_1.text.id %}">{% blocktrans %}Back to the versions page.{% endblocktrans %}</a>
+        <br />
+        <a href="{% url text-viewandcomment rev_1.text.id %}">{% blocktrans %}Go to text (most recent version).{% endblocktrans %}</a>
+        </td>
+        <td class="right_side">
+            {{ html }}
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

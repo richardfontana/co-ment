@@ -1,0 +1,37 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+
+{% block title %}{% blocktrans %}Email users{% endblocktrans %}{% endblock %}
+
+{% block content %}
+<h1>{% blocktrans %}Email users{% endblocktrans %}</h1>
+
+<table class="two_sides">
+    <tr>
+        <td class="left_side">
+       {% blocktrans count users|length as counter %}Use this form to send an email to the following participant.{% plural %}Use this form to send an email to the following participants.{% endblocktrans %}
+       <br />
+       <br />
+       {% blocktrans with text.get_latest_version.title as title %}Note that you can add a link to the text "{{ title }}" in the email.{% endblocktrans %}
+        
+        </td>
+        <td class="right_side">
+            {% blocktrans count users|length as counter %}Email will be sent to one participant :{% plural %}Email will be sent to {{ counter }} participants :{% endblocktrans %}
+            
+            {% for my_user in users %}
+                {{ my_user.get_profile.display_name }}
+            {% endfor %}
+
+            <br />                
+            <br />                
+            <form method="post" action="">
+            {{ form.as_block }}
+            <br/>
+            <input class="high_button" type="submit" value="{% blocktrans %}Send{% endblocktrans %}"/>
+            </form>                
+            
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

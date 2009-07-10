@@ -1,0 +1,102 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+{% load local_perms %}
+{% load cm_utils %}
+
+{% block title %}
+{% blocktrans count text.version_number as counter with text.get_latest_version.title as title %}One version for text "{{ title }}"{% plural %}{{ counter }} versions for text "{{ title }}"{% endblocktrans %}
+{% endblock %}
+
+{% block content %}
+<h1>{% blocktrans count text.version_number as counter with text.get_latest_version.title as title %}One version for text "{{ title }}"{% plural %}{{ counter }} versions for text "{{ title }}"{% endblocktrans %}</h1>
+
+{% get_local_text_perm user text can_delete_local_text as can_delete %}
+{% get_local_text_perm user text can_edit_local_text as can_edit %}
+
+<form id="versions" method="post">
+{% for version in versions %}
+{% if more_than_two %} 
+<input type="radio" id="o_{{ forloop.counter0 }}" name="o" value="{{ version.id }}" style="visibility: visible;"/>
+<input type="radio" id="i_{{ forloop.counter0 }}" name="i" value="{{ version.id }}" style="visibility: visible;"/>
+&nbsp;
+{% endif %}
+<span class="res_title"><a href="{% url text-viewandcommentversion text.id version.id %}">{{ version.title }}</a></span>
+<span class="comment_count">({% blocktrans count version.nbcomments as nb %}{{ nb }} comment{% plural %}{{ nb }} comments{% endblocktrans %}, {% blocktrans count version.nbreplies as nb %}{{ nb }} reply{% plural %}{{ nb }} replies{% endblocktrans %})</span>
+<span class="res_metadata">
+{% blocktrans %}By{% endblocktrans %} <a href="{% url texts-user version.creator.id %}">{{ version.creator.username }}</a>,
+{% blocktrans with version.created|local_date as date %}created on {{ date }}{% endblocktrans %}
+</span>
+{% if version.note %} {% blocktrans %}note{% endblocktrans %} : {{ version.note }}{% endif %}
+{% if not forloop.first %}
+    {% if can_edit %}
+        | <a href="{% url text-reverttoversion version.id %}">{% blocktrans %}revert to this version{% endblocktrans %}</a>
+    {% endif %}
+{% endif %}
+{% if can_delete %}
+    {% if versions|length_is:0 %}
+	    {# avoid presenting delete button when only one #}
+	    | <a onclick="coment_confirm('{% blocktrans %}Are you sure you want to delete this version ?{% endblocktrans %}', 
+	    							 function(){window.location = '{% url text-deleteversion version.id %}' ; })" href="#">
+	    
+	    {% blocktrans %}delete this version{% endblocktrans %}
+	    </a>
+    {% endif %}
+{% endif %}
+
+<br />
+{% endfor %}
+
+<br />
+{% if more_than_two %}
+<input class="high_button" type="submit" value="{% blocktrans %}Compare selected versions{% endblocktrans %}"/>
+{% endif %}
+</form>
+
+<script type="text/javascript">
+selected_o = 1;
+selected_i = 0;
+
+function id_set(name,from_id,to_id,prop,value) {
+    for(id = from_id;id<=to_id;id++) {
+        $("#" + name + "_" + id).css(prop, value)
+    } 
+}
+
+$("#i_0").attr("checked","checked");
+$("#o_1").attr("checked","checked");
+id_set('o',0,0,"visibility","hidden");
+id_set('i',1,20,"visibility","hidden");
+
+function input_changed(id,name) {
+    i_id = parseInt(id.substring(2));
+    if (name=='o') {
+        if (i_id < selected_o) {
+            id_set("i",i_id,selected_o,"visibility","hidden")     
+        }
+        else {
+            id_set("i",selected_o,i_id-1,"visibility","visible")     
+        }
+        selected_o = i_id;
+    }
+    else {
+        if (i_id < selected_i) {
+            id_set("o",i_id+1,selected_i,"visibility","visible")     
+        }
+        else {
+            id_set("o",selected_i-1,i_id,"visibility","hidden")     
+        }
+        selected_i = i_id;
+    }
+    
+}
+
+ $(document).ready(function() {
+   $("#versions").find("input").each(function(i) {
+     $(this).click(function(){
+        input_changed(this.id,this.name);
+     });
+   });
+ });</script>
+ 
+{% endblock %}
+

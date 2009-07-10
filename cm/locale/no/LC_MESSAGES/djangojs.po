@@ -1,0 +1,599 @@
+# translation of djangojs.po to Norwegian bokmål
+# Copyright (C) Sopinspace
+# This file is distributed under the same license as the co-ment package.
+# Kirill Miazine <km@krot.org>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: co-ment\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-01-23 14:58+0100\n"
+"PO-Revision-Date: 2008-10-22 01:48+0200\n"
+"Last-Translator: Kirill Miazine <km@krot.org>\n"
+"Language-Team: <no@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: hand-crafted ;)\n"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:39
+#: media/client/js/core/globals/LayoutMgr.js:87
+msgid "List"
+msgstr "Vis"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:59
+msgid "comment state changed"
+msgstr "merknadens tilstand ble endret"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:59
+msgid "comment state could not be changed"
+msgstr "merknadens tilstand kunne ikke bli endret"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:69
+msgid "reply state changed"
+msgstr "svarets tilstand ble endret"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:69
+msgid "reply state could not be changed"
+msgstr "svarets tilstand kunne ikke bli endret"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:80
+#: media/client/js/core/CommentAttachMgr.js:228
+msgid "comments could not be retrieved"
+msgstr "merknader kunne ikke bli hentet"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:181
+msgid "tag cloud could not be retrieved"
+msgstr "etikett-sky kunne ikke bli hentet"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:196
+msgid "no comment has been tagged yet"
+msgstr "ingen merknader er blitt merket med etiketter ennå"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:291
+#: media/client/js/core/CommentAttachMgr.js:307
+#: media/client/js/core/CommentAttachMgr.js:311
+msgid "field is required"
+msgstr "feltet er påkrevd"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:294
+msgid "email is invalid"
+msgstr "epostadressen er ikke gyldig"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:301
+msgid "Select the part you wish to comment in the text diplayed on the right"
+msgstr "Velg teksten som du vil kommentere fra teksten som vises på høyre side"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:319
+msgid "Thank you for your comment. It is being held for moderation."
+msgstr "Takk for din merknad. Den er er blitt holdt tilbake for gjennomgang."
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:366
+msgid "comment changed"
+msgstr "merknaden ble endret"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:366
+msgid "comment could not be changed"
+msgstr "merknaden kunne ikke bli endret"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:392
+msgid "comment added"
+msgstr "merknaden ble lagt til"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:392
+msgid "comment could not be added"
+msgstr "merknaden kunne ikke bli lagt til"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:545
+msgid "comment deleted"
+msgstr "merknaden ble slettet"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:545
+msgid "comment could not be deleted"
+msgstr "merknaden kunne ikke bli slettet"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:568
+msgid "reply deleted"
+msgstr "svaret ble slettet"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttachMgr.js:568
+msgid "could not delete reply"
+msgstr "svaret kunne ikke bli slettet"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/ServerExchange.js:11
+msgid "Please wait ..."
+msgstr "Vennligst vent..."
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/ServerExchange.js:41
+msgid "unauthorized"
+msgstr "ingen rettigheter"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/ServerExchange.js:45
+msgid "unknown error"
+msgstr "ukjent feil"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/DiscussionItem.js:32
+msgid "delete reply"
+msgstr "slette svar"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:113
+#: media/client/js/core/DiscussionItem.js:33
+msgid "edit comment"
+msgstr "endre merknad"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:116
+#: media/client/js/core/DiscussionItem.js:38
+msgid "click to change"
+msgstr "klikk for å endre"
+
+#: media/client/js/comentclient-min.js:1 media/client/js/util.js:15
+#: media/client/js/core/DiscussionItem.js:49
+msgid "tags:"
+msgstr "etiketter:"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/DiscussionItem.js:55
+msgid "Are you sure you want to delete this reply ?"
+msgstr "Er du sikker på at du ønsker å slette dette svaret?"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/Language.js:8
+msgid "F j, Y, \\a\\t g:i a"
+msgstr "j.n.Y \\k\\l. G:i"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/Language.js:9
+msgid "n/j/Y"
+msgstr "j.n.Y"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/Language.js:10
+msgid ""
+"January|February|March|April|May|June|July|August|September|October|November|"
+"December"
+msgstr ""
+"januar|februar|mars|april|mai|juni|juli|august|september|oktober|november|"
+"desember"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/Language.js:11
+msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
+msgstr "søndag|mandag|tirsdag|onsdag|torsdag|fredag|lørdag"
+
+#: media/client/js/comentclient-min.js:1 media/client/js/util.js:5
+msgid "anonymous"
+msgstr "anonym"
+
+#: media/client/js/comentclient-min.js:1 media/client/js/util.js:8
+msgid "By %(author)s on %(date)s"
+msgstr "Av %(author)s %(date)s"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:105
+msgid "save changes"
+msgstr "Lagre endringer"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:340
+#: media/client/js/core/globals/LayoutMgr.js:111
+#: media/client/js/core/globals/LayoutMgr.js:192
+msgid "cancel"
+msgstr "Avbryt"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:116
+#: media/client/js/core/globals/MenuMgr.js:15
+msgid "Edit"
+msgstr "Rediger"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:126
+msgid "add comment"
+msgstr "legg til merknad"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:131
+msgid "Add"
+msgstr "Legg til"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:142
+msgid "before"
+msgstr "før"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:142
+msgid "after"
+msgstr "etter"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:142
+msgid "between"
+msgstr "mellom"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:142
+msgid "no date criteria"
+msgstr "ingen kriterier for dato"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:146
+msgid "comments' text and title"
+msgstr "merknadenes tekst og overskrift"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:146
+msgid "comments' authors"
+msgstr "merknadenes forfattere"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:152
+#: media/client/js/core/globals/LayoutMgr.js:306
+msgid "States"
+msgstr "Tilstand"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:170
+msgid "Choose..."
+msgstr "Velg..."
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:191
+#: media/client/js/core/globals/LayoutMgr.js:200
+msgid "m/d/Y"
+msgstr "d.m.Y"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:193
+msgid "From"
+msgstr "Fra"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:201
+msgid "To"
+msgstr "Til"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:229
+#: media/client/js/core/globals/LayoutMgr.js:273
+#: media/client/js/core/globals/LayoutMgr.js:347
+msgid "All comments"
+msgstr "Alle merknader"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:247
+msgid "Text"
+msgstr "Tekst"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:254
+msgid "Search"
+msgstr "Søk"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:262
+msgid "in"
+msgstr "i"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:267
+#: media/client/js/core/globals/LayoutMgr.js:342
+msgid "Apply Filter"
+msgstr "Bruk filter"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:280
+msgid "Date"
+msgstr "Dato"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:403
+msgid "Comments"
+msgstr "Merknader"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:403
+#, fuzzy
+msgid "View all"
+msgstr "Visning"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:586
+msgid "Subscribe"
+msgstr ""
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:586
+msgid "Unsubscribe"
+msgstr ""
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:587
+msgid ""
+"Click to receive email notifications when this text is changed or when a "
+"comment is added"
+msgstr ""
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/LayoutMgr.js:587
+msgid "Click to unsubscribe from email notifications"
+msgstr ""
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:6
+msgid "View"
+msgstr "Visning"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:7
+msgid "Filter"
+msgstr "Filter"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:8
+msgid "None"
+msgstr "Ingen"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:9
+msgid "Simple"
+msgstr "Enkel"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:10
+#: media/client/js/core/globals/MenuMgr.js:30
+msgid "Advanced"
+msgstr "Avansert"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:11
+msgid "Tag cloud"
+msgstr "Etikett-sky"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:13
+msgid "Actions"
+msgstr ""
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:16
+msgid "Sharing and moderation"
+msgstr "Deling og godkjenning"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:17
+msgid "Embed"
+msgstr "Integrer"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:18
+msgid "Feeds"
+msgstr "Strømmer"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:20
+msgid "Print"
+msgstr "Utskrift"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:21
+#: media/client/js/core/globals/MenuMgr.js:34
+msgid "Text with (filtered) comments"
+msgstr "Tekst med (filtrerte) merknader"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:22
+#: media/client/js/core/globals/MenuMgr.js:35
+msgid "Text only"
+msgstr "Kun tekst"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:24
+#: media/client/js/core/globals/MenuMgr.js:27
+#: media/client/js/core/globals/MenuMgr.js:37
+#: media/client/js/core/globals/MenuMgr.js:43
+msgid "As Portable Document Format"
+msgstr "PDF (Portable Document Format)"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:25
+#: media/client/js/core/globals/MenuMgr.js:28
+msgid "From Browser"
+msgstr ""
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:31
+msgid "Apply amendments"
+msgstr "Alle endringer"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:33
+msgid "Export"
+msgstr "Eksport"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:38
+#: media/client/js/core/globals/MenuMgr.js:44
+msgid "As Rich Text Format"
+msgstr "RTF (Rich Text Format)"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:39
+#: media/client/js/core/globals/MenuMgr.js:45
+msgid "As Open Document Text"
+msgstr "ODT (Open Document Text)"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:40
+#: media/client/js/core/globals/MenuMgr.js:46
+msgid "As Microsoft Word 97/2000/XP"
+msgstr "DOC (Microsoft Word 97/2000/XP)"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/MenuMgr.js:41
+#: media/client/js/core/globals/MenuMgr.js:47
+msgid "As Text Format"
+msgstr "Ren tekst"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/TextMgr.js:47
+msgid "amendments could not be added"
+msgstr "endringene kunne ikke bli lagt til"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/TextMgr.js:92
+msgid "could not subscribe"
+msgstr ""
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/globals/SelectionMgr.js:43
+msgid ""
+"Selected text is too long (selection is limited to %(count)s characters). \n"
+"Please retry."
+msgstr ""
+"Den valgte teksten er for lang (utvalget er begrenset til %(count) tegn).\n"
+"Prøv igjen."
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:79
+msgid "%(count)s reply"
+msgstr "%(count)s svar"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:81
+msgid "%(count)s replies"
+msgstr "%(count)s svar"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:112
+msgid "delete comment"
+msgstr "slett merknad"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:119
+msgid "Read"
+msgstr "Les"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:122
+msgid "Reply"
+msgstr "Svar"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:123
+msgid "Minimize"
+msgstr "Skjul"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:143
+msgid "Are you sure you want to delete this comment ?"
+msgstr "Er du sikker på at du ønsker å slette denne merknaden?"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:219
+msgid "replies could not be retrieved"
+msgstr "svarene kunne ikke bli hentet"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:319
+msgid "Tags (comma separated)"
+msgstr "Etikketter (atskilt med komma)"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:322
+msgid "Name"
+msgstr "Navn"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:323
+msgid "E-mail (will not be published)"
+msgstr "Epostadresse (adressen blir ikke vist offentlig)"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:324
+msgid "Re:"
+msgstr "Sv:"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:325
+msgid "Title (required)"
+msgstr "Overskrift (påkrevd)"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:326
+msgid "Text (required)"
+msgstr "Tekst (påkrevd)"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:334
+msgid "add reply"
+msgstr "legg til svar"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:394
+msgid "reply added"
+msgstr "svaret ble lagt til"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:394
+msgid "reply could not be added"
+msgstr "svaret kunne ikke bli lagt til"
+
+#: media/client/js/comentclient-min.js:1
+#: media/client/js/core/CommentAttach.js:407
+msgid "Thank you for your reply. It is being held for moderation."
+msgstr "Takk for ditt svar. Det er er blitt holdt tilbake for gjennomgang."
+
+#: media/js/cm-utils.js:14
+msgid "yes"
+msgstr "ja"
+
+#: media/js/cm-utils.js:15
+msgid "no"
+msgstr "nei"
+
+#: media/js/cm-utils.js:19
+msgid "Warning"
+msgstr "Advarsel"
+
+#~ msgid "amendments applied"
+#~ msgstr "endringene ble implementert"
+
+#~ msgid "Name (required)"
+#~ msgstr "Navn (påkrevd)"
+
+#~ msgid "E-mail (will not be published) (required)"
+#~ msgstr "Epostadresse (adressen blir ikke vist offentlig) (påkrevd)"
+
+#~ msgid "Title (required):"
+#~ msgstr "Overskrift (påkrevd):"
+
+#~ msgid "Text (required):"
+#~ msgstr "Tekst (påkrevd):"

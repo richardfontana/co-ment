@@ -1,0 +1,1 @@
+-- Should be the place to create full text search index
